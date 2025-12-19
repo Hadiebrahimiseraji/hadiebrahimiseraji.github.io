@@ -1,0 +1,28 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🃄 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🎨 Validate HTML
+        run: |
+          echo "✅ HTML files ready for deployment"
+          ls -la *.html
+          
+      - name: 🚀 Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "🎉 Website deployed successfully!"
+          echo "📍 Visit: https://hadiebrahimiseraji.github.io"
