@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>آهن آلات محسن محمدی | قائمشهر</title>
+  <meta name="description" content="آهن آلات محسن محمدی در مازندران، قائمشهر، میدان امام. فروش انواع آهن‌آلات و خدمات برش و سفارش." />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f172a;
+      --muted:#94a3b8;
+      --text:#e2e8f0;
+      --accent:#38bdf8;
+      --accent2:#22c55e;
+      --border:rgba(148,163,184,.18);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", "Noto Sans", sans-serif;
+      background: radial-gradient(1200px 700px at 80% -10%, rgba(56,189,248,.25), transparent 60%),
+                  radial-gradient(900px 600px at 0% 0%, rgba(34,197,94,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.9;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:auto; padding:22px}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 22px;
+      max-width:var(--max); margin:auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800;
+      letter-spacing:-.3px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(56,189,248,.9), rgba(34,197,94,.85));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center;
+      color:#001018;
+      font-weight:900;
+    }
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .navlinks a{
+      padding:8px 12px; border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);
+    }
+    .navlinks a:hover{border-color:var(--border); color:var(--text)}
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(15,23,42,.6);
+      color:var(--text);
+      cursor:pointer;
+      transition:.2s transform, .2s border-color, .2s background;
+      min-width:120px;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(56,189,248,.5)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(34,197,94,.9));
+      border-color: transparent;
+      color:#041018;
+      font-weight:800;
+    }
+    .btn.primary:hover{filter:saturate(1.05) brightness(1.02)}
+    .hero{
+      padding:42px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(15,23,42,.7);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:22px}
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height:1.4;
+      letter-spacing:-.6px;
+    }
+    .lead{color:var(--muted); margin:0 0 18px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 20px}
+    .badge{
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:8px 12px;
+      color:var(--muted);
+      background: rgba(2,6,23,.35);
+      font-size:14px;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    .kpi .mini{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(2,6,23,.28);
+    }
+    .mini .n{font-weight:900; font-size:18px}
+    .mini .t{color:var(--muted); font-size:13px}
+    .side{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .side h2{margin:0; font-size:18px}
+    .info{
+      display:grid; gap:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .info strong{color:var(--text); font-weight:700}
+    .maplink{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(2,6,23,.25);
+    }
+    section{padding:22px 0}
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      margin:0 0 12px;
+    }
+    .section-title h2{margin:0; font-size:22px}
+    .muted{color:var(--muted)}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .service{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(15,23,42,.65);
+    }
+    .service h3{margin:0 0 6px; font-size:16px}
+    .service p{margin:0; color:var(--muted); font-size:14px}
+    .work{
+      padding:16px;
+      display:grid;
+      gap:10px;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+    }
+    .ph{
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:
+        radial-gradient(200px 120px at 30% 20%, rgba(56,189,248,.28), transparent 60%),
+        radial-gradient(200px 120px at 80% 60%, rgba(34,197,94,.22), transparent 55%),
+        rgba(2,6,23,.25);
+      height:120px;
+      display:grid;
+      place-items:center;
+      color:rgba(226,232,240,.75);
+      font-size:13px;
+    }
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .contact .box{padding:18px}
+    .list{
+      margin:0; padding:0;
+      list-style:none;
+      display:grid; gap:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .list li{
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(2,6,23,.25);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    footer{
+      padding:28px 0 36px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+    }
+    .small{font-size:13px}
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .contact{grid-template-columns:1fr}
+      .btn{min-width:auto}
+    }
+    @media (max-width: 420px){
+      .gallery{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand" aria-label="برند">
+        <div class="logo" aria-hidden="true">آ</div>
+        <div>
+          <div style="font-weight:900">آهن آلات محسن محمدی</div>
+          <div class="small muted">قائمشهر • میدان امام</div>
+        </div>
+      </div>
+
+      <nav class="navlinks" aria-label="منو">
+        <a href="#services">خدمات</a>
+        <a href="#products">محصولات</a>
+        <a href="#work">نمونه‌کار</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <div class="cta">
+        <!-- شماره تلفن را اینجا وارد کنید -->
+        <a class="btn" href="tel:+98XXXXXXXXXX" title="تماس تلفنی">تماس</a>
+        <!-- واتساپ: شماره را با کد کشور و بدون + و 00 بگذارید -->
+        <a class="btn primary" href="https://wa.me/98XXXXXXXXXX" target="_blank" rel="noopener">واتساپ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div class="card hero-card">
+          <h1>فروش آهن‌آلات در قائمشهر<br/>سریع، دقیق، قابل اعتماد</h1>
+          <p class="lead">
+            آهن آلات محسن محمدی — تأمین انواع آهن‌آلات ساختمانی و صنعتی در مازندران، قائمشهر، میدان امام.
+            استعلام قیمت و ثبت سفارش از طریق تماس یا واتساپ.
+          </p>
+
+          <div class="badges" aria-label="ویژگی‌ها">
+            <span class="badge">برش و سفارش</span>
+            <span class="badge">مشاوره خرید</span>
+            <span class="badge">ارسال به محل</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#contact">استعلام قیمت</a>
+            <a class="btn" href="#services">دیدن خدمات</a>
+          </div>
+
+          <div class="kpi" aria-label="شاخص‌ها">
+            <div class="mini">
+              <div class="n">✓</div>
+              <div class="t">فاکتور رسمی / توافقی</div>
+            </div>
+            <div class="mini">
+              <div class="n">⏱</div>
+              <div class="t">پاسخ‌گویی سریع</div>
+            </div>
+            <div class="mini">
+              <div class="n">📦</div>
+              <div class="t">ارسال در محدوده شهر</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card side" aria-label="اطلاعات تماس سریع">
+          <h2>آدرس و دسترسی</h2>
+          <div class="info">
+            <div><strong>نام:</strong> آهن آلات محسن محمدی</div>
+            <div><strong>استان:</strong> مازندران</div>
+            <div><strong>شهر:</strong> قائمشهر</div>
+            <div><strong>آدرس:</strong> میدان امام</div>
+          </div>
+
+          <!-- لینک نقشه: اگر لوکیشن دقیق داری، لینک گوگل‌مپ را جایگزین کن -->
+          <a class="maplink" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%A6%D9%85%D8%B4%D9%87%D8%B1%20%D9%85%DB%8C%D8%AF%D8%A7%D9%86%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%A2%D9%87%D9%86%20%D8%A2%D9%84%D8%A7%D8%AA%20%D9%85%D8%AD%D8%B3%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%DB%8C">
+            <span>باز کردن در نقشه</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <div class="small muted">
+            نکته: شماره تماس و لینک واتساپ بالا را با شماره واقعی جایگزین کن.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-title">
+        <h2>خدمات</h2>
+        <div class="muted small">برای افزودن خدمات، فقط یک کارت جدید کپی کن</div>
+      </div>
+
+      <div class="grid3">
+        <div class="service">
+          <h3>فروش آهن‌آلات ساختمانی</h3>
+          <p>میلگرد، تیرآهن، نبشی، ناودانی و… با مشاوره مناسب پروژه.</p>
+        </div>
+        <div class="service">
+          <h3>برش و سفارش</h3>
+          <p>برش در ابعاد موردنیاز و آماده‌سازی سفارش برای تحویل یا ارسال.</p>
+        </div>
+        <div class="service">
+          <h3>ارسال به محل</h3>
+          <p>هماهنگی ارسال در قائمشهر و اطراف (طبق شرایط و موجودی).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="section-title">
+        <h2>محصولات</h2>
+        <div class="muted small">لیست نمونه — با موجودی واقعی جایگزین شود</div>
+      </div>
+
+      <div class="grid3">
+        <div class="service">
+          <h3>میلگرد</h3>
+          <p>سایزهای پرمصرف پروژه‌های ساختمانی.</p>
+        </div>
+        <div class="service">
+          <h3>تیرآهن</h3>
+          <p>برای اسکلت و سازه، با مشاوره انتخاب مقطع.</p>
+        </div>
+        <div class="service">
+          <h3>ورق و پروفیل</h3>
+          <p>ورق سیاه/گالوانیزه، قوطی و پروفیل‌های رایج.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-title">
+        <h2>نمونه‌کار / گالری</h2>
+        <div class="muted small">اینجا بعداً می‌تونی عکس‌های واقعی اضافه کنی</div>
+      </div>
+
+      <div class="card work">
+        <div class="gallery" aria-label="گالری نمونه">
+          <div class="ph">عکس ۱</div>
+          <div class="ph">عکس ۲</div>
+          <div class="ph">عکس ۳</div>
+        </div>
+        <div class="small muted">
+          برای عکس واقعی: فایل‌ها را در ریپو (مثلاً پوشه images) بگذار و به‌جای این باکس‌ها از &lt;img&gt; استفاده کن.
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>تماس</h2>
+        <div class="muted small">سریع‌ترین راه: تماس یا واتساپ</div>
+      </div>
+
+      <div class="contact">
+        <div class="card box">
+          <h3 style="margin:0 0 10px">راه‌های ارتباطی</h3>
+          <ul class="list">
+            <li>
+              <span>📞 تلفن</span>
+              <a class="btn" href="tel:+98XXXXXXXXXX">تماس</a>
+            </li>
+            <li>
+              <span>💬 واتساپ</span>
+              <a class="btn primary" href="https://wa.me/98XXXXXXXXXX" target="_blank" rel="noopener">چت</a>
+            </li>
+            <li>
+              <span>📍 آدرس</span>
+              <a class="btn" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%A6%D9%85%D8%B4%D9%87%D8%B1%20%D9%85%DB%8C%D8%AF%D8%A7%D9%86%20%D8%A7%D9%85%D8%A7%D9%85">
+                نقشه
+              </a>
+            </li>
+          </ul>
+          <p class="small muted" style="margin-top:12px">
+            متن و دکمه‌ها را مطابق اطلاعات واقعی خودت تنظیم کن.
+          </p>
+        </div>
+
+        <div class="card box">
+          <h3 style="margin:0 0 10px">سفارش سریع</h3>
+          <p class="muted" style="margin:0 0 12px">
+            پیام نمونه برای واتساپ (کپی کن و بفرست):
+          </p>
+
+          <div class="service" style="background: rgba(2,6,23,.25)">
+            <p style="margin:0; color: var(--text); font-size:14px">
+              سلام، برای استعلام قیمت آهن‌آلات (نام کالا/سایز/تعداد) و ارسال به (آدرس) لطفاً راهنمایی بفرمایید.
+            </p>
+          </div>
+
+          <div class="cta" style="margin-top:12px">
+            <a class="btn primary" href="https://wa.me/98XXXXXXXXXX" target="_blank" rel="noopener">ارسال در واتساپ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">
+        © <span id="year"></span> آهن آلات محسن محمدی — قائمشهر، میدان امام
+      </div>
+      <div class="small muted">
+        ساخته‌شده برای GitHub Pages (فقط HTML/CSS).
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // سال جاری
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
