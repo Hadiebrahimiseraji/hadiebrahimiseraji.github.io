@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>آهن آلات محسن محمدی قائم‌شهر | قیمت روز آهن</title>
+  <title>آهن آلات محسن محمدی قائم‌شهر</title>
   <meta name="description" content="آهن آلات محسن محمدی در قائم‌شهر - میلگرد، تیرآهن، نبشی، ارسال همان‌روز." />
   <meta name="author" content="آهن آلات محسن" />
   <meta name="format-detection" content="telephone=no" />
@@ -25,77 +25,188 @@
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
       background: #0b1020;
       color: #2b2b2b;
+      overflow: hidden;
     }
 
-    /* نقشه و پس زمنه */
+    /* انیمیشن لایه حرکاتی */
+    #cinema-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99999;
+      background: linear-gradient(180deg, #000 0%, #1a2a4a 50%, #000 100%);
+      backdrop-filter: blur(1px);
+      opacity: 1;
+      transition: opacity 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    #cinema-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* کره یا فولد بالا */
+    .cinema-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      background: #000;
+      animation: topClose 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      z-index: 10;
+    }
+
+    @keyframes topClose {
+      0% { height: 0; }
+      5%, 95% { height: 0; }
+      100% { height: 50vh; }
+    }
+
+    /* کره یا فولد پایين */
+    .cinema-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      background: #000;
+      animation: bottomClose 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      z-index: 10;
+    }
+
+    @keyframes bottomClose {
+      0% { height: 0; }
+      5%, 95% { height: 0; }
+      100% { height: 50vh; }
+    }
+
+    /* فیلم کشی شهر */
+    .cinema-film {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      animation: cinemaFly 3.2s ease-out forwards;
+    }
+
+    @keyframes cinemaFly {
+      0% {
+        transform: translateY(-100vh) scale(1.1);
+        opacity: 0.95;
+      }
+      10% {
+        opacity: 1;
+      }
+      85% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+      }
+    }
+
+    /* مارکر رزمورکش (SVG ساده) */
+    .cinema-focus {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      animation: cinemaFocus 3.2s ease-out forwards;
+      pointer-events: none;
+      box-shadow: 0 0 60px rgba(255, 200, 0, 0.3), inset 0 0 30px rgba(255, 200, 0, 0.1);
+    }
+
+    @keyframes cinemaFocus {
+      0% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0.6;
+      }
+      15% {
+        opacity: 0.8;
+      }
+      85% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    /* نقل و مخفی شودن متن */
+    .cinema-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 5;
+      pointer-events: none;
+      animation: cinemaTextFade 3.2s ease-out forwards;
+    }
+
+    .cinema-text-main {
+      font-size: clamp(24px, 6vw, 56px);
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .cinema-text-sub {
+      font-size: clamp(12px, 2.5vw, 18px);
+      margin: 8px 0 0;
+      opacity: 0.85;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    @keyframes cinemaTextFade {
+      0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+      20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+      }
+    }
+
+    /* نقشه با انیمیشن */
     #hero-map-wrap {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
       background: linear-gradient(135deg, #070a12 0%, #0b1020 100%);
+      opacity: 0;
+      transition: opacity 800ms ease-out 3.3s;
+    }
+
+    #hero-map-wrap.show {
+      opacity: 1;
     }
 
     #map {
       width: 100%;
       height: 100%;
-    }
-
-    /* لایه معرفی اولیه */
-    #intro-overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      z-index: 9999;
-      background: radial-gradient(circle at 30% 30%, rgba(120, 140, 255, 0.25), transparent 40%),
-                  radial-gradient(circle at 70% 70%, rgba(120, 255, 200, 0.18), transparent 40%),
-                  linear-gradient(180deg, #070a12, #0b1020);
-      color: #fff;
-      transition: opacity 400ms ease;
-    }
-
-    #intro-overlay.hide {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .intro-card {
-      text-align: center;
-      padding: 28px 24px 24px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      max-width: 360px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    }
-
-    .intro-globe {
-      font-size: 56px;
-      line-height: 1;
-      margin-bottom: 12px;
-      display: inline-block;
-      animation: floaty 2s ease-in-out infinite;
-    }
-
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .intro-title {
-      font-weight: 800;
-      font-size: 20px;
-      margin: 0 0 8px;
-      color: #ffffff;
-    }
-
-    .intro-sub {
-      margin: 0;
-      font-size: 14px;
-      opacity: 0.9;
-      color: rgba(255, 255, 255, 0.8);
     }
 
     /* پاپ آپ مغازه */
@@ -174,7 +285,7 @@
       transform: translateY(-2px);
     }
 
-    /* Leaflet چاپه، رنگها */
+    /* Leaflet ران */
     .leaflet-container {
       background: #e5e5e5;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
@@ -189,19 +300,13 @@
       background: white;
     }
 
-    /* مارکر نیومورفیک */
     .leaflet-marker-icon {
       filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 
-    /* راهنمایی زایر */
     .leaflet-control {
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .leaflet-control-zoom {
-      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .leaflet-control-attribution {
@@ -210,40 +315,50 @@
       backdrop-filter: blur(4px);
     }
 
-    /* رفتار حرکاتی کم */
     @media (prefers-reduced-motion: reduce) {
-      .intro-globe { animation: none; }
-      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-
-    /* بخش بعدی */
-    #main-content {
-      display: none;
-    }
-
-    #main-content.show {
-      display: block;
+      #cinema-overlay,
+      .cinema-top,
+      .cinema-bottom,
+      .cinema-film,
+      .cinema-focus,
+      .cinema-text {
+        animation: none !important;
+        transition: none !important;
+      }
+      #cinema-overlay { opacity: 0; }
+      #hero-map-wrap { opacity: 1; transition: none; }
     }
   </style>
 </head>
 <body>
-  <!-- نقشه با انیمیشن -->
-  <section id="hero-map-wrap">
-    <div id="map" role="application" aria-label="نقشه فروشگاه"></div>
-
-    <div id="intro-overlay">
-      <div class="intro-card">
-        <div class="intro-globe">🌍</div>
-        <p class="intro-title">در حال قیام ایران</p>
-        <p class="intro-sub">آهن آلات محسن محمدی</p>
-      </div>
+  <!-- انیمیشن سینمایی ورود -->
+  <div id="cinema-overlay">
+    <div class="cinema-top"></div>
+    <div class="cinema-bottom"></div>
+    
+    <!-- فیلم میدان شهر -->
+    <img 
+      class="cinema-film" 
+      src="assets/images/storefront.jpg" 
+      alt="فروشگاه آهن آلات"
+      loading="eager"
+      decoding="sync"
+    >
+    
+    <!-- لیزر لاله رزمورکش -->
+    <div class="cinema-focus"></div>
+    
+    <!-- متن -->
+    <div class="cinema-text">
+      <p class="cinema-text-main">آهن آلات</p>
+      <p class="cinema-text-sub">محسن محمدی - قائم‌شهر</p>
     </div>
-  </section>
+  </div>
 
-  <!-- بخش اصلی (Pاینتر و تماس) -->
-  <main id="main-content">
-    <!-- اینجا سرویس‌های دیگر قرار خواهند گرفت -->
-  </main>
+  <!-- نقشه Leaflet -->
+  <section id="hero-map-wrap">
+    <div id="map" role="application" aria-label="نقشه معرفیی مغازه"></div>
+  </section>
 
   <!-- Leaflet JS -->
   <script
@@ -256,122 +371,71 @@
     (() => {
       "use strict";
 
-      /* ============================================================
-         تنظیمات فروشگاه
-         ============================================================ */
+      /* تنظیمات فروشگاه */
       const SHOP = {
         name: "آهن آلات محسن محمدی",
         address: "قائم‌شهر، میدان امام",
         phone: "0911 328 6812",
-        // مختصات قائم‌شهر
         lat: 36.4719,
         lng: 52.8620,
-        // عكس فروشگاه
         photoUrl: "assets/images/storefront.jpg"
       };
 
-      /* ============================================================
-         تنظیمات نقشه‌شناسی
-         ============================================================ */
-
-      const WORLD_VIEW = { lat: 31.5, lng: 54.2, zoom: 4 }; // ایران
-      const COUNTRY_VIEW = { lat: 36.5, lng: 52.8, zoom: 8 }; // مازندران
-      const TARGET_ZOOM = 17; // زوم نهایی بر لوکیشن
-
+      const TARGET_ZOOM = 17;
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const ANIM_DURATION_1 = prefersReducedMotion ? 0.01 : 1.8; // دنیا به ایران
-      const ANIM_DURATION_2 = prefersReducedMotion ? 0.01 : 1.6; // ایران به لوکیشن
 
-      // ساخت نقشه
-      const map = L.map("map", {
-        zoomControl: true,
-        attributionControl: true,
-        worldCopyJump: false,
-        preferCanvas: true,
-        fadeAnimation: false,
-        markerZoomAnimation: false
-      });
+      // بعد از مرور کافی زمان - انیمیشن حذف و نقشه نمایش داده شود
+      setTimeout(() => {
+        document.getElementById("cinema-overlay").classList.add("fade-out");
+        document.getElementById("hero-map-wrap").classList.add("show");
 
-      map.setView([WORLD_VIEW.lat, WORLD_VIEW.lng], WORLD_VIEW.zoom);
+        // رسم نقشه
+        const map = L.map("map", {
+          zoomControl: true,
+          attributionControl: true,
+          worldCopyJump: false,
+          preferCanvas: true,
+          fadeAnimation: false,
+          markerZoomAnimation: false
+        });
 
-      // Tile Layer - OpenStreetMap
-      const tiles = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        minZoom: 2,
-        subdomains: "abc",
-        keepBuffer: 2,
-        updateWhenIdle: true,
-        updateWhenZooming: false,
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
+        map.setView([SHOP.lat, SHOP.lng], TARGET_ZOOM);
 
-      // مارکر و پاپ آپ
-      const gmapsLink = `https://www.google.com/maps?q=${SHOP.lat},${SHOP.lng}`;
-      const waLink = `https://wa.me/989113286812?text=سلام%2C%20برای%20استعلام%20قیمت%20آهن%20پیام%20دادم.`;
+        // Tiles
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          minZoom: 2,
+          subdomains: "abc",
+          keepBuffer: 2,
+          updateWhenIdle: true,
+          updateWhenZooming: false,
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
 
-      const popupHtml = `
-        <div class="shop-popup" dir="rtl">
-          <p class="name">${escapeHtml(SHOP.name)}</p>
-          <img loading="lazy" decoding="async" src="${escapeAttr(SHOP.photoUrl)}" alt="عكس فروشگاه">
-          <p class="addr">📄 ${escapeHtml(SHOP.address)}</p>
-          <p class="addr" style="margin-bottom: 6px;">&#128222; <span style="direction: ltr; unicode-bidi: embed;">${SHOP.phone}</span></p>
-          <div class="actions">
-            <a class="btn btn-primary" href="${escapeAttr(gmapsLink)}" target="_blank" rel="noopener">📄 Google Maps</a>
-            <a class="btn btn-secondary" href="${escapeAttr(waLink)}" target="_blank" rel="noopener">💬 WhatsApp</a>
+        // مارکر و پاپ آپ
+        const gmapsLink = `https://www.google.com/maps?q=${SHOP.lat},${SHOP.lng}`;
+        const waLink = `https://wa.me/989113286812?text=سلام%2C%20برای%20استعلام%20قیمت%20آهن%20پیام%20دادم.`;
+
+        const popupHtml = `
+          <div class="shop-popup" dir="rtl">
+            <p class="name">${escapeHtml(SHOP.name)}</p>
+            <img loading="lazy" decoding="async" src="${escapeAttr(SHOP.photoUrl)}" alt="عكس فروشگاه">
+            <p class="addr">📄 ${escapeHtml(SHOP.address)}</p>
+            <p class="addr" style="margin-bottom: 6px;">&#128222; <span style="direction: ltr; unicode-bidi: embed;">${SHOP.phone}</span></p>
+            <div class="actions">
+              <a class="btn btn-primary" href="${escapeAttr(gmapsLink)}" target="_blank" rel="noopener">📄 Maps</a>
+              <a class="btn btn-secondary" href="${escapeAttr(waLink)}" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-      const marker = L.marker([SHOP.lat, SHOP.lng], { keyboard: false })
-        .addTo(map)
-        .bindPopup(popupHtml, { maxWidth: 260 });
+        const marker = L.marker([SHOP.lat, SHOP.lng], { keyboard: false })
+          .addTo(map)
+          .bindPopup(popupHtml, { maxWidth: 260 });
 
-      /* ============================================================
-         کرنونش انیمیشن سه مرحله
-         ============================================================ */
-
-      let started = false;
-      let step = 0;
-
-      const runAnimation = () => {
-        if (started) return;
-        started = true;
-
-        // مرحله 1: دنیا → ایران
-        const delay1 = prefersReducedMotion ? 0 : 450;
-        setTimeout(() => {
-          map.flyTo([COUNTRY_VIEW.lat, COUNTRY_VIEW.lng], COUNTRY_VIEW.zoom, {
-            animate: !prefersReducedMotion,
-            duration: ANIM_DURATION_1,
-            easeLinearity: 0.25
-          });
-
-          // مرحله 2: ایران → لوکیشن دقیق
-          const delay2 = prefersReducedMotion ? 50 : Math.round(ANIM_DURATION_1 * 1000) + 400;
-          setTimeout(() => {
-            map.flyTo([SHOP.lat, SHOP.lng], TARGET_ZOOM, {
-              animate: !prefersReducedMotion,
-              duration: ANIM_DURATION_2,
-              easeLinearity: 0.2
-            });
-
-            // مرحله 3: باز پاپ و مخفی لایه معرفی
-            const delay3 = prefersReducedMotion ? 50 : Math.round(ANIM_DURATION_2 * 1000) + 300;
-            setTimeout(() => {
-              marker.openPopup();
-              document.getElementById("intro-overlay").classList.add("hide");
-              // برای آینده - بخش اصلی را نمایش بد۔
-              // document.getElementById("main-content").classList.add("show");
-            }, delay3);
-          }, delay2);
-        }, delay1);
-      };
-
-      // روش 1: وقتی کاشی‌ها بار شد
-      tiles.once("load", runAnimation);
-
-      // روش 2: fallback - اگر دیر لود شد
-      setTimeout(runAnimation, 3000);
+        // از کار شروع کنيد - پاپ آپ از خود باز
+        marker.openPopup();
+      }, 3400);
 
       // توابع امنیتی
       function escapeHtml(str) {
