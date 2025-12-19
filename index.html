@@ -1,193 +1,699 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>آهن آلات محسن محمدی | قائمشهر</title>
-  <meta name="description" content="آهن آلات محسن محمدی در قائمشهر - فروش میلگرد، تیرآهن، ورق، نبشی، ناودانی، قوطی. تماس برای قیمت روز." />
-
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- آیکن ساده برای تب مرورگر (اختیاری) -->
-  <link rel="icon" href="assets/images/logo.png" />
+  <title>آهن آلات محمدی قائم‌شهر | قیمت روز آهن | ارسال همان‌روز</title>
+  <meta name="description" content="فروش میلگرد، تیرآهن، نبشی، ناودانی، پروفیل و ورق در قائم‌شهر. قیمت روز، موجودی واقعی، برش‌کاری و ارسال همان‌روز داخل شهر." />
+  <meta name="author" content="آهن آلات محمدی" />
+  <meta name="format-detection" content="telephone=no" />
+  
+  <!-- Open Graph -->
+  <meta property="og:locale" content="fa_IR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="آهن آلات محمدی قائم‌شهر | قیمت روز آهن | ارسال همان‌روز" />
+  <meta property="og:description" content="قیمت روز آهن در قائم‌شهر، ارسال همان‌روز و برش‌کاری دقیق." />
+  <meta property="og:image" content="/assets/images/storefront.jpg" />
+  <meta property="og:url" content="https://hadiebrahimiseraji.github.io/" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0E3A5D',
+            dark: '#2B2B2B',
+            light: '#F3F4F6',
+            accent: '#16A34A',
+          },
+          borderRadius: {
+            xl: '22px',
+          },
+          boxShadow: {
+            custom: '0 10px 30px rgba(0,0,0,.08)',
+          },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Tahoma', 'Arial', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HardwareStore",
+    "name": "آهن آلات محمدی",
+    "url": "https://hadiebrahimiseraji.github.io/",
+    "image": ["/assets/images/storefront.jpg"],
+    "telephone": "09113286812",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "قائم‌شهر، میدان امام",
+      "addressLocality": "قائم‌شهر",
+      "addressCountry": "IR"
+    },
+    "geo": {"@type": "GeoCoordinates", "latitude": 36.4719, "longitude": 52.8620},
+    "areaServed": "قائم‌شهر",
+    "openingHours": "Sa-Th 08:00-18:00"
+  }
+  </script>
+  
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"ارسال داخل قائم‌شهر چطور انجام می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"ثبت‌شده قبل از 14:00 همان‌روز تحويل می‌شود."}},
+      {"@type":"Question","name":"آيا برش‌کاری داريد؟","acceptedAnswer":{"@type":"Answer","text":"بله، خدمات برش دقیق طبق نقشه ارائه می‌شود."}}
+    ]
+  }
+  </script>
+  
+  <style>
+    .num { direction: ltr; unicode-bidi: embed; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+    html { scroll-behavior: smooth; }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.12);
+    }
+    .price-table th {
+      background-color: #f3f4f6;
+      font-weight: 600;
+    }
+    .price-table tr:not(:last-child) td {
+      border-bottom: 1px solid #e5e7eb;
+    }
+    details[open] summary {
+      margin-bottom: 8px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
 </head>
+<body class="bg-light font-sans text-dark">
+  <!-- Geo Notice -->
+  <div id="geoBanner" class="bg-yellow-100 text-yellow-800 text-center py-2 text-sm hidden">
+    در حال حاضر فقط داخل <b>قائم‌شهر</b> سرويس‌دهی داريم.
+  </div>
 
-<body>
-  <!-- نوار بالا -->
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="#top" aria-label="رفتن به ابتدای صفحه">
-        <img class="brand-logo" src="assets/images/logo.png" alt="لوگوی آهن آلات محسن محمدی">
-        <div class="brand-text">
-          <div class="brand-title">آهن آلات محسن محمدی</div>
-          <div class="brand-subtitle">مازندران، قائمشهر — میدان امام</div>
-        </div>
+
+  <!-- Topbar -->
+  <div class="bg-primary text-white text-sm">
+    <div class="container mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <div class="opacity-90">آهن آلات محمدی – تامین آهن‌آلات ساختمانی در قائم‌شهر</div>
+      <div class="flex items-center gap-4">
+        <a href="tel:09113286812" class="hover:underline">
+          <i class="fas fa-phone ml-1"></i> تلفن: <span class="num">0911 328 6812</span>
+        </a>
+        <a href="#contact" class="hover:underline">
+          <i class="fas fa-map-marker-alt ml-1"></i> مسیر‌یابی
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="#0E3A5D" stroke-width="1.5"/>
+          <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="#0E3A5D" stroke-width="1.5"/>
+        </svg>
+        <strong class="text-primary">آهن آلات محمدی | قائم‌شهر</strong>
       </a>
-
-      <nav class="nav">
-        <a href="#products">محصولات</a>
-        <a href="#contact">تماس</a>
+      
+      <nav class="hidden md:block">
+        <div class="flex items-center gap-6">
+          <a href="#prices" class="hover:text-primary">قیمت روز</a>
+          <a href="#products" class="hover:text-primary">محصولات</a>
+          <a href="#services" class="hover:text-primary">خدمات</a>
+          <a href="#projects" class="hover:text-primary">پروژه‌ها</a>
+          <a href="#faq" class="hover:text-primary">سوالات</a>
+          <a href="#contact" class="hover:text-primary">تماس</a>
+        </div>
       </nav>
+      
+      <div class="flex items-center gap-2">
+        <a id="callBtn" href="tel:09113286812" class="bg-accent text-white px-4 py-2 rounded-xl font-semibold hover:bg-green-700 transition">
+          <i class="fas fa-phone ml-1"></i> تماس فوری
+        </a>
+        <a id="waBtn" target="_blank" rel="noopener" href="#" class="border border-primary text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary hover:text-white transition hidden sm:inline-flex">
+          <i class="fab fa-whatsapp ml-1"></i> واتساپ
+        </a>
+      </div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- بخش معرفی (Hero) -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>آهن آلات محسن محمدی</h1>
-          <p class="lead">
-            فروش انواع آهن‌آلات در قائمشهر: میلگرد، تیرآهن، ورق، نبشی، ناودانی و قوطی.
-            برای <strong>قیمت روز</strong> تماس بگیرید یا در واتساپ پیام بدهید.
-          </p>
 
-          <div class="cta-row">
-            <a class="btn primary" href="tel:+989113286812">تماس (0911 328 6812)</a>
-            <a class="btn" href="tel:+989113286813">تماس (0911 328 6813)</a>
-            <a class="btn whatsapp" target="_blank" rel="noopener"
-               href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%BE%DB%8C%D8%A7%D9%85%20%D8%AF%D8%A7%D8%AF%D9%85.">
-              استعلام در واتساپ
+  <!-- Hero Section -->
+  <section id="home" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <h1 class="text-3xl font-bold text-primary mb-4">فروش آهن‌آلات در قائم‌شهر با ارسال همان‌روز</h1>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            میلگرد، تیرآهن، نبشی، ناودانی، پروفیل و ورق — قیمت به‌روز و موجودی واقعی. برش‌کاری دقیق و تحويل سريع داخل قائم‌شهر.
+          </p>
+          
+          <div class="flex flex-wrap gap-3 mb-6">
+            <a href="#prices" class="bg-primary text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-800 transition">
+              مشاهده قیمت امروز
+            </a>
+            <a id="heroWa" target="_blank" rel="noopener" href="#" class="border border-primary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition">
+              <i class="fab fa-whatsapp ml-1"></i> استعلام سريع واتساپ
             </a>
           </div>
-
-          <ul class="badges" aria-label="ویژگی‌ها">
-            <li>قیمت روز</li>
-            <li>مشاوره خرید</li>
-            <li>فروش حضوری</li>
-          </ul>
-        </div>
-
-        <div class="hero-media" aria-label="تصویر فروشگاه">
-          <img src="assets/images/storefront.jpg" alt="تصویر فروشگاه آهن آلات محسن محمدی">
-        </div>
-      </div>
-    </section>
-
-    <!-- محصولات -->
-    <section id="products" class="section">
-      <div class="container">
-        <h2>محصولات</h2>
-        <p class="section-sub">
-          برای هر محصول، جهت دریافت قیمت روز تماس بگیرید یا در واتساپ پیام بدهید.
-        </p>
-
-        <div class="grid">
-          <!-- کارت محصول: میلگرد -->
-          <article class="card">
-            <img src="assets/images/products/milgerd.jpg" alt="میلگرد">
-            <div class="card-body">
-              <h3>میلگرد</h3>
-              <a class="btn small whatsapp" target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%85%DB%8C%D9%84%DA%AF%D8%B1%D8%AF%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C%D8%AF.">
-                استعلام قیمت
-              </a>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              ارسال همان‌روز داخل شهر
             </div>
-          </article>
-
-          <!-- تیرآهن -->
-          <article class="card">
-            <img src="assets/images/products/tirahan.jpg" alt="تیرآهن">
-            <div class="card-body">
-              <h3>تیرآهن</h3>
-              <a class="btn small whatsapp" target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D8%AA%DB%8C%D8%B1%D8%A2%D9%87%D9%86%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C%D8%AF.">
-                استعلام قیمت
-              </a>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              برش‌کاری طبق نقشه
             </div>
-          </article>
-
-          <!-- ورق -->
-          <article class="card">
-            <img src="assets/images/products/varagh.jpg" alt="ورق">
-            <div class="card-body">
-              <h3>ورق</h3>
-              <a class="btn small whatsapp" target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%88%D8%B1%D9%82%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C%D8%AF.">
-                استعلام قیمت
-              </a>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              پرداخت در محل
             </div>
-          </article>
-
-          <!-- نبشی -->
-          <article class="card">
-            <img src="assets/images/products/nabshi.jpg" alt="نبشی">
-            <div class="card-body">
-              <h3>نبشی</h3>
-              <a class="btn small whatsapp" target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%86%D8%A8%D8%B4%DB%8C%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C%D8%AF.">
-                استعلام قیمت
-              </a>
-            </div>
-          </article>
-
-          <!-- ناودانی -->
-          <article class="card">
-            <img src="assets/images/products/navdani.jpg" alt="ناودانی">
-            <div class="card-body">
-              <h3>ناودانی</h3>
-              <a class="btn small whatsapp" target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%86%D8%A7%D9%88%D8%AF%D8%A7%D9%86%DB%8C%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C%D8%AF.">
-                استعلام قیمت
-              </a>
-            </div>
-          </article>
-
-          <!-- قوطی -->
-          <article class="card">
-            <img src="assets/images/products/ghoti.jpg" alt="قوطی و پروفیل">
-            <div class="card-body">
-              <h3>قوطی (پروفیل)</h3>
-              <a class="btn small whatsapp" target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%82%D9%88%D8%B7%DB%8C%20(%D9%BE%D8%B1%D9%88%D9%81%DB%8C%D9%84)%20%D8%B1%D8%A7%20%D9%85%DB%8C%E2%80%8C%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C%D8%AF.">
-                استعلام قیمت
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- تماس -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>تماس</h2>
-
-        <div class="contact-box">
-          <div class="contact-item">
-            <div class="label">آدرس</div>
-            <div class="value">مازندران، قائمشهر، میدان امام</div>
-          </div>
-
-          <div class="contact-item">
-            <div class="label">تلفن</div>
-            <div class="value">
-              <a href="tel:+989113286812">0911 328 6812</a>
-              <span class="sep">|</span>
-              <a href="tel:+989113286813">0911 328 6813</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="label">واتساپ</div>
-            <div class="value">
-              <a target="_blank" rel="noopener"
-                 href="https://wa.me/989113286812?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D9%88%D8%B2%20%D9%BE%DB%8C%D8%A7%D9%85%20%D8%AF%D8%A7%D8%AF%D9%85.">
-                پیام در واتساپ (0911 328 6812)
-              </a>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              پشتيبانی تلفنی سريع
             </div>
           </div>
         </div>
+        
+        <div class="md:w-1/2">
+          <img src="assets/images/storefront.jpg" alt="انبار آهن آلات محمدی در قائم‌شهر" class="rounded-xl shadow-lg w-full h-auto" loading="lazy">
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span>© آهن آلات محسن محمدی — قائمشهر</span>
-      <a href="#top">بازگشت به بالا ↑</a>
+
+  <!-- Price Section -->
+  <section id="prices" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-primary mb-2">قیمت روز آهن در قائم‌شهر</h2>
+          <p class="text-gray-500">
+            به‌روزرسانی: <span id="jalaliDate" class="font-medium"></span>
+          </p>
+        </div>
+        <button id="refreshPrices" class="text-gray-500 hover:text-primary transition">
+          <i class="fas fa-sync-alt ml-1"></i> به‌روزرسانی دستی
+        </button>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full price-table">
+            <thead>
+              <tr>
+                <th class="px-6 py-3 text-right">قلم</th>
+                <th class="px-6 py-3 text-right">سايزهای رايج</th>
+                <th class="px-6 py-3 text-right">واحد</th>
+                <th class="px-6 py-3 text-right">قیمت حدودی</th>
+                <th class="px-6 py-3 text-right">اقدام</th>
+              </tr>
+            </thead>
+            <tbody id="priceBody" class="divide-y divide-gray-200"></tbody>
+          </table>
+        </div>
+      </div>
+      
+      <p class="text-gray-500 text-sm mt-3">
+        قیمت‌ها راهنمای اوليه‌اند؛ برای پيش‌فاکتور رسمی و موجودی لحظه‌ای با ما تماس بگيريد.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Products Section -->
+  <section id="products" class="py-12 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">محصولات پرمصرف</h2>
+      
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+
+  <!-- Services Section -->
+  <section id="services" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">خدمات</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover">
+          <div class="text-primary text-3xl mb-4">
+            <i class="fas fa-cut"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">برش‌کاری دقیق</h3>
+          <p class="text-gray-500">
+            برش طبق نقشه شما؛ ارسال فايل از طريق واتساپ.
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover">
+          <div class="text-primary text-3xl mb-4">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">ارسال همان‌روز</h3>
+          <p class="text-gray-500">
+            ثبت قبل از ساعت <span class="num">14:00</span> → تحويل همان‌روز داخل قائم‌شهر.
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover">
+          <div class="text-primary text-3xl mb-4">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">پرداخت در محل</h3>
+          <p class="text-gray-500">
+            تسويه هنگام تحويل، فاکتور رسمی عندالنياز.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-12 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-8">
+        <h2 class="text-2xl font-bold text-primary">نمونه پروژه‌ها و نظر مشتريان</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover">
+          <img src="assets/images/storefront.jpg" alt="تحويل تیرآهن در پروژه مسکونی قائم‌شهر" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <p class="text-sm">
+              پروژه مسکونی كوي كارمندان – تیرآهن 14 | تحويل در همان‌روز
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover">
+          <img src="assets/images/storefront.jpg" alt="تحويل میلگرد برای فونداسيون" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <p class="text-sm">
+              فونداسيون ساختمان آزادی – میلگرد A3 سايز 16
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover">
+          <img src="assets/images/storefront.jpg" alt="برش‌کاری پروفيل در کارگاه" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <p class="text-sm">
+              کارگاه در و پنجره وليک‌بازار – برش پروفيل سفارشی
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-4">
+          <div class="flex text-yellow-400 mb-2">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm">«قیمت‌ها شفاف و تحويل سريع بود.»</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-4">
+          <div class="flex text-yellow-400 mb-2">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p class="text-sm">«پشتيبانی عالی، برش‌کاری دقیق انجام شد.»</p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-4">
+          <div class="flex text-yellow-400 mb-2">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-sm">«برای پروژه‌های بعدی هم از محمدی می‌خريم.»</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">سوالات متداول</h2>
+      
+      <div class="space-y-4">
+        <details open class="bg-white rounded-xl shadow-lg p-4">
+          <summary class="text-lg font-semibold">ارسال داخل قائم‌شهر چگونه است؟</summary>
+          <p class="text-gray-500 mt-2">
+            اگر قبل از ساعت <span class="num">14:00</span> ثبت کنيد، همان‌روز تحويل می‌دهيم.
+          </p>
+        </details>
+        
+        <details class="bg-white rounded-xl shadow-lg p-4">
+          <summary class="text-lg font-semibold">آيا برش‌کاری داريد؟</summary>
+          <p class="text-gray-500 mt-2">
+            بله، بر اساس نقشه شما، با دقت و تميز.
+          </p>
+        </details>
+        
+        <details class="bg-white rounded-xl shadow-lg p-4">
+          <summary class="text-lg font-semibold">روش‌های پرداخت؟</summary>
+          <p class="text-gray-500 mt-2">
+            پرداخت در محل يا واريز؛ فاکتور رسمی عندالنياز.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">تماس و مسیر‌یابی</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-store text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">نام فروشگاه:</p>
+                <p class="font-semibold">آهن آلات محمدی</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-city text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">شهر:</p>
+                <p class="font-semibold">قائم‌شهر (قائمشهر)</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">آدرس:</p>
+                <p class="font-semibold">قائم‌شهر، میدان امام</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-phone-alt text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">تلفن ثابت:</p>
+                <a id="phoneLandlineLink" href="tel:09113286812" class="num font-semibold hover:text-primary">0911 328 6812</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fab fa-whatsapp text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">موبايل/واتساپ:</p>
+                <a id="phoneMobile" href="tel:09113286812" class="num font-semibold hover:text-primary">0911 328 6812</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-clock text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">ساعت کاری:</p>
+                <p class="font-semibold">شنبه تا پنج‌شنبه 8 تا 18</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a id="mapBalad" target="_blank" rel="noopener" href="#" class="border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50 transition">
+              <i class="fas fa-map ml-1"></i> مسیر در بلد
+            </a>
+            <a id="mapNeshan" target="_blank" rel="noopener" href="#" class="border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50 transition">
+              <i class="fas fa-map-marked-alt ml-1"></i> مسیر در نشان
+            </a>
+            <a id="mapGoogle" target="_blank" rel="noopener" href="#" class="border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50 transition">
+              <i class="fab fa-google ml-1"></i> Google Maps
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <img src="assets/images/storefront.jpg" alt="نقشه موقعيت آهن آلات محمدی در قائم‌شهر" class="w-full h-full object-cover" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta fixed left-3 right-3 bottom-3 z-50 hidden md:hidden">
+    <div class="bg-white rounded-xl shadow-lg border border-gray-200 flex gap-2 p-2">
+      <a id="stickyCall" href="tel:09113286812" class="bg-accent text-white flex-1 text-center py-3 rounded-lg font-semibold">
+        <i class="fas fa-phone ml-1"></i> تماس
+      </a>
+      <a id="stickyWa" target="_blank" rel="noopener" href="#" class="border border-primary text-primary flex-1 text-center py-3 rounded-lg font-semibold">
+        <i class="fab fa-whatsapp ml-1"></i> واتساپ
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          © <span id="year"></span> آهن آلات محمدی – قائم‌شهر
+        </div>
+        <div class="text-gray-500 text-sm">
+          طراحی سبک و بهينه برای موبايل و سئو محلی
+        </div>
+      </div>
     </div>
   </footer>
+
+
+  <script>
+    // ====== تنظيمات (پر کنيد) ======
+    const PHONE_LANDLINE = "09113286812";
+    const PHONE_MOBILE = "09113286812";
+    const SHOP_LAT = 36.4719;
+    const SHOP_LNG = 52.8620;
+    const SHOP_ADDRESS = "قائم‌شهر، میدان امام";
+    const priceData = [
+      { product: "میلگرد A3", sizes: "12، 14، 16", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "تیرآهن", sizes: "14، 16، 18", unit: "کيلو/شاخه", price: "تماس بگيريد" },
+      { product: "نبشی", sizes: "30×30 تا 50×50", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "ناودانی", sizes: "8، 10", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "پروفيل قوطی", sizes: "20×20 تا 60×60", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "ورق سياه", sizes: "ضخامت 2–10mm", unit: "کيلو", price: "تماس بگيريد" }
+    ];
+    const products = [
+      { 
+        name: "میلگرد A3", 
+        desc: "موجودی روزانه سايز 12/14/16", 
+        slug: "rebar-a3", 
+        inStock: true,
+        price: "تماس بگيريد",
+        image: "assets/images/products/milgerd.jpg"
+      },
+      { 
+        name: "تیرآهن", 
+        desc: "سايز 14/16/18؛ برندهای رايج", 
+        slug: "beam", 
+        inStock: true,
+        price: "تماس بگيريد",
+        image: "assets/images/products/tirahan.jpg"
+      },
+      { 
+        name: "نبشی", 
+        desc: "بال 30 تا 50؛ سفارش برش", 
+        slug: "angle", 
+        inStock: true,
+        price: "تماس بگيريد",
+        image: "assets/images/products/nabshi.jpg"
+      },
+      { 
+        name: "ناودانی", 
+        desc: "سايزهای پرمصرف ساختمانی", 
+        slug: "channel", 
+        inStock: true,
+        price: "تماس بگيريد",
+        image: "assets/images/products/navdani.jpg"
+      },
+      { 
+        name: "پروفيل قوطی", 
+        desc: "20×20 تا 60×60؛ صنعتی/سبک", 
+        slug: "profile", 
+        inStock: true,
+        price: "تماس بگيريد",
+        image: "assets/images/products/ghoti.jpg"
+      },
+      { 
+        name: "ورق سياه", 
+        desc: "ضخامت 2 تا 10 ميلی‌متر", 
+        slug: "sheet", 
+        inStock: true,
+        price: "تماس بگيريد",
+        image: "assets/images/products/varagh.jpg"
+      }
+    ];
+    function toJalaliToday(){
+      try{ return new Intl.DateTimeFormat('fa-IR-u-ca-persian', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date()); }
+      catch(e){ return new Intl.DateTimeFormat('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date()); }
+    }
+    function haversine(lat1, lon1, lat2, lon2){
+      const toRad = d => d * Math.PI / 180;
+      const R = 6371;
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+      const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c;
+    }
+    function buildWhatsAppLink(number, text){
+      if(!number) return '#';
+      const intl = number.replace(/^0/, '98');
+      const msg = encodeURIComponent(text || 'سلام، برای استعلام قیمت آهن در قائم‌شهر پیام می‌دهم.');
+      return `https://wa.me/${intl}?text=${msg}`;
+    }
+    function setJalaliToday(){
+      const el = document.getElementById('jalaliDate');
+      if(el) el.textContent = toJalaliToday();
+    }
+    function buildPriceTable(){
+      const tbody = document.getElementById('priceBody');
+      if(!tbody) return 0;
+      tbody.innerHTML = '';
+      priceData.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="px-4 py-3 font-medium">${row.product}</td>
+          <td class="px-4 py-3 text-gray-500">${row.sizes}</td>
+          <td class="px-4 py-3 text-gray-500">${row.unit}</td>
+          <td class="px-4 py-3 font-semibold">${row.price}</td>
+          <td class="px-4 py-3">
+            <a href="${buildWhatsAppLink(PHONE_MOBILE, `سلام، برای ${row.product} (${row.sizes}) در قائم‌شهر استعلام می‌گيرم.`)}" 
+               target="_blank" rel="noopener" 
+               class="border border-primary text-primary px-3 py-1 rounded-lg hover:bg-primary hover:text-white transition inline-flex items-center">
+              <i class="fab fa-whatsapp ml-1 text-sm"></i> استعلام
+            </a>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+      return tbody.querySelectorAll('tr').length;
+    }
+    function buildProducts(){
+      const grid = document.getElementById('productGrid');
+      if(!grid) return 0;
+      grid.innerHTML = '';
+      products.forEach(p => {
+        const el = document.createElement('div');
+        el.className = 'bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover';
+        el.innerHTML = `
+          <div class="h-40 bg-gray-100 rounded-lg mb-4 overflow-hidden">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-lg font-semibold text-primary mb-2">${p.name}</h3>
+          <p class="text-gray-500 text-sm mb-2">${p.desc}</p>
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center text-sm">
+              <span class="w-2 h-2 rounded-full ${p.inStock ? 'bg-green-500' : 'bg-gray-300'} mr-2"></span>
+              ${p.inStock ? 'موجود' : 'ناموجود'}
+            </div>
+            <div class="text-primary font-semibold">${p.price}</div>
+          </div>
+          <a href="${buildWhatsAppLink(PHONE_MOBILE, `سلام، درباره ${p.name} راهنمايی می‌خواهم.`)}" 
+             target="_blank" rel="noopener" 
+             class="w-full border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition inline-flex items-center justify-center">
+            <i class="fab fa-whatsapp ml-1"></i> مشاوره
+          </a>`;
+        grid.appendChild(el);
+      });
+      return grid.childElementCount;
+    }
+    function wireContacts(){
+      const waLink = buildWhatsAppLink(PHONE_MOBILE);
+      const ids = ['waBtn','heroWa','stickyWa'];
+      ids.forEach(id => { const a = document.getElementById(id); if(a) a.href = waLink; });
+      const callIds = [['callBtn', PHONE_LANDLINE], ['stickyCall', PHONE_LANDLINE]];
+      callIds.forEach(([id, num]) => { const a = document.getElementById(id); if(a) a.href = `tel:${num}`; });
+      const mobile = document.getElementById('phoneMobile'); 
+      if(mobile){ mobile.href = `tel:${PHONE_MOBILE}`; mobile.textContent = PHONE_MOBILE; }
+      const landline = document.getElementById('phoneLandlineLink'); 
+      if(landline){ landline.href = `tel:${PHONE_LANDLINE}`; landline.textContent = PHONE_LANDLINE; }
+      const balad = `https://balad.ir/route?dlat=${SHOP_LAT}&dlng=${SHOP_LNG}`;
+      const neshan = `https://neshan.org/maps/places/routes?to=${SHOP_LAT},${SHOP_LNG}`;
+      const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${SHOP_LAT},${SHOP_LNG}`;
+      const mapIds = [['mapBalad', balad], ['mapNeshan', neshan], ['mapGoogle', gmaps]];
+      mapIds.forEach(([id, href]) => { const a = document.getElementById(id); if(a) a.href = href; });
+    }
+    function geoNotice(){
+      if(!('geolocation' in navigator)) return;
+      const banner = document.getElementById('geoBanner');
+      if(!banner) return;
+      navigator.geolocation.getCurrentPosition(pos => {
+        const dist = haversine(pos.coords.latitude, pos.coords.longitude, SHOP_LAT, SHOP_LNG);
+        if(dist > 25){ banner.style.display = 'block'; }
+      }, () => {}, { enableHighAccuracy:false, timeout:5000, maximumAge:600000 });
+    }
+    function wireEvents(){
+      const ref = document.getElementById('refreshPrices');
+      if(ref){ ref.addEventListener('click', (e) => { e.preventDefault(); setJalaliToday(); buildPriceTable(); }); }
+    }
+    function setYear(){ const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear(); }
+    window.addEventListener('DOMContentLoaded', () => {
+      setJalaliToday();
+      buildPriceTable();
+      buildProducts();
+      wireContacts();
+      wireEvents();
+      setYear();
+      geoNotice();
+    });
+  </script>
 </body>
 </html>
