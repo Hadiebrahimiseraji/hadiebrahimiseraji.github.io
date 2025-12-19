@@ -3,454 +3,402 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>آهن آلات محسن محمدی قائم‌شهر</title>
-  <meta name="description" content="آهن آلات محسن محمدی در قائم‌شهر - میلگرد، تیرآهن، نبشی، ارسال همان‌روز." />
+  <title>آهن آلات محسن محمدی | قائمشهر</title>
+  <meta name="description" content="فروش میلگرد، تیرآهن، نبشی، ناودانی، پروفیل و ورق در قائمشهر. قیمت روز، موجودی واقعی، برش‌کاری و ارسال همان‌روز داخل شهر." />
   <meta name="author" content="آهن آلات محسن" />
   <meta name="format-detection" content="telephone=no" />
   
-  <!-- Leaflet Map CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-  />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0E3A5D',
+            dark: '#2B2B2B',
+            light: '#F3F4F6',
+            accent: '#16A34A',
+          },
+          borderRadius: {
+            xl: '22px',
+          },
+          boxShadow: {
+            custom: '0 10px 30px rgba(0,0,0,.08)',
+          },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Tahoma', 'Arial', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    html, body { height: 100%; width: 100%; }
-    
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-      background: #0b1020;
-      color: #2b2b2b;
-      overflow: hidden;
+    .num { direction: ltr; unicode-bidi: embed; }
+    html { scroll-behavior: smooth; }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.12);
     }
-
-    /* انیمیشن لایه حرکاتی */
-    #cinema-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 99999;
-      background: linear-gradient(180deg, #000 0%, #1a2a4a 50%, #000 100%);
-      backdrop-filter: blur(1px);
-      opacity: 1;
-      transition: opacity 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+    .price-table th {
+      background-color: #f3f4f6;
+      font-weight: 600;
     }
-
-    #cinema-overlay.fade-out {
-      opacity: 0;
-      pointer-events: none;
+    .price-table tr:not(:last-child) td {
+      border-bottom: 1px solid #e5e7eb;
     }
-
-    /* کره یا فولد بالا */
-    .cinema-top {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 0;
-      background: #000;
-      animation: topClose 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-      z-index: 10;
+    details[open] summary {
+      margin-bottom: 8px;
     }
-
-    @keyframes topClose {
-      0% { height: 0; }
-      5%, 95% { height: 0; }
-      100% { height: 50vh; }
-    }
-
-    /* کره یا فولد پایين */
-    .cinema-bottom {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 0;
-      background: #000;
-      animation: bottomClose 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-      z-index: 10;
-    }
-
-    @keyframes bottomClose {
-      0% { height: 0; }
-      5%, 95% { height: 0; }
-      100% { height: 50vh; }
-    }
-
-    /* فیلم کشی شهر */
-    .cinema-film {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      animation: cinemaFly 3.2s ease-out forwards;
-    }
-
-    @keyframes cinemaFly {
-      0% {
-        transform: translateY(-100vh) scale(1.1);
-        opacity: 0.95;
-      }
-      10% {
-        opacity: 1;
-      }
-      85% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.9;
-      }
-    }
-
-    /* مارکر رزمورکش (SVG ساده) */
-    .cinema-focus {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border: 3px solid rgba(255, 255, 255, 0.4);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      animation: cinemaFocus 3.2s ease-out forwards;
-      pointer-events: none;
-      box-shadow: 0 0 60px rgba(255, 200, 0, 0.3), inset 0 0 30px rgba(255, 200, 0, 0.1);
-    }
-
-    @keyframes cinemaFocus {
-      0% {
-        transform: translate(-50%, -50%) scale(2.5);
-        opacity: 0.6;
-      }
-      15% {
-        opacity: 0.8;
-      }
-      85% {
-        opacity: 0.5;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(0.8);
-        opacity: 0;
-      }
-    }
-
-    /* نقل و مخفی شودن متن */
-    .cinema-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #fff;
-      z-index: 5;
-      pointer-events: none;
-      animation: cinemaTextFade 3.2s ease-out forwards;
-    }
-
-    .cinema-text-main {
-      font-size: clamp(24px, 6vw, 56px);
-      font-weight: 900;
-      margin: 0;
-      letter-spacing: 2px;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-    }
-
-    .cinema-text-sub {
-      font-size: clamp(12px, 2.5vw, 18px);
-      margin: 8px 0 0;
-      opacity: 0.85;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    }
-
-    @keyframes cinemaTextFade {
-      0% {
-        opacity: 0.3;
-        transform: translate(-50%, -50%) scale(0.9);
-      }
-      20% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-      75% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.95);
-      }
-    }
-
-    /* نقشه با انیمیشن */
-    #hero-map-wrap {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(135deg, #070a12 0%, #0b1020 100%);
-      opacity: 0;
-      transition: opacity 800ms ease-out 3.3s;
-    }
-
-    #hero-map-wrap.show {
-      opacity: 1;
-    }
-
-    #map {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* پاپ آپ مغازه */
-    .shop-popup {
-      width: 240px;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-    }
-
-    .shop-popup img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 12px;
-      display: block;
-      margin: 10px 0 12px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .shop-popup .name {
-      font-weight: 900;
-      margin: 0 0 8px;
-      font-size: 16px;
-      color: #0b1020;
-    }
-
-    .shop-popup .addr {
-      margin: 0 0 12px;
-      font-size: 13px;
-      opacity: 0.75;
-      color: #2b2b2b;
-    }
-
-    .shop-popup .actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .shop-popup .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      text-decoration: none;
-      padding: 9px 12px;
-      border-radius: 10px;
-      border: none;
-      font-size: 12px;
-      font-weight: 700;
+    summary {
       cursor: pointer;
-      transition: all 250ms ease;
-      flex: 1;
-      min-height: 36px;
-    }
-
-    .shop-popup .btn-primary {
-      color: #fff;
-      background: #0b1020;
-    }
-
-    .shop-popup .btn-primary:hover {
-      background: #1a2844;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .shop-popup .btn-secondary {
-      color: #0b1020;
-      background: #f0f0f0;
-      border: 1px solid #ddd;
-    }
-
-    .shop-popup .btn-secondary:hover {
-      background: #e8e8e8;
-      transform: translateY(-2px);
-    }
-
-    /* Leaflet ران */
-    .leaflet-container {
-      background: #e5e5e5;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
-    }
-
-    .leaflet-popup-content-wrapper {
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .leaflet-popup-tip {
-      background: white;
-    }
-
-    .leaflet-marker-icon {
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    }
-
-    .leaflet-control {
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .leaflet-control-attribution {
-      font-size: 11px;
-      background: rgba(255, 255, 255, 0.85) !important;
-      backdrop-filter: blur(4px);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #cinema-overlay,
-      .cinema-top,
-      .cinema-bottom,
-      .cinema-film,
-      .cinema-focus,
-      .cinema-text {
-        animation: none !important;
-        transition: none !important;
-      }
-      #cinema-overlay { opacity: 0; }
-      #hero-map-wrap { opacity: 1; transition: none; }
+      font-weight: 600;
     }
   </style>
 </head>
-<body>
-  <!-- انیمیشن سینمایی ورود -->
-  <div id="cinema-overlay">
-    <div class="cinema-top"></div>
-    <div class="cinema-bottom"></div>
-    
-    <!-- فیلم میدان شهر -->
-    <img 
-      class="cinema-film" 
-      src="assets/images/storefront.jpg" 
-      alt="فروشگاه آهن آلات"
-      loading="eager"
-      decoding="sync"
-    >
-    
-    <!-- لیزر لاله رزمورکش -->
-    <div class="cinema-focus"></div>
-    
-    <!-- متن -->
-    <div class="cinema-text">
-      <p class="cinema-text-main">آهن آلات</p>
-      <p class="cinema-text-sub">محسن محمدی - قائم‌شهر</p>
+<body class="bg-light font-sans text-dark">
+  <!-- Topbar -->
+  <div class="bg-primary text-white text-sm">
+    <div class="container mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <div class="opacity-90">آهن آلات محسن محمدی – تامین آهن‌آلات ساختمانی در قائمشهر</div>
+      <div class="flex items-center gap-4">
+        <a href="tel:09113286812" class="hover:underline">
+          <i class="fas fa-phone ml-1"></i> تلفن: <span class="num">0911 328 6812</span>
+        </a>
+        <a href="#contact" class="hover:underline">
+          <i class="fas fa-map-marker-alt ml-1"></i> مسیر‌یابی
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- نقشه Leaflet -->
-  <section id="hero-map-wrap">
-    <div id="map" role="application" aria-label="نقشه معرفیی مغازه"></div>
-  </section>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="#0E3A5D" stroke-width="1.5"/>
+          <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="#0E3A5D" stroke-width="1.5"/>
+        </svg>
+        <strong class="text-primary">آهن آلات محسن | قائمشهر</strong>
+      </a>
+      
+      <nav class="hidden md:block">
+        <div class="flex items-center gap-6">
+          <a href="#prices" class="hover:text-primary">قیمت روز</a>
+          <a href="#products" class="hover:text-primary">محصولات</a>
+          <a href="#services" class="hover:text-primary">خدمات</a>
+          <a href="#contact" class="hover:text-primary">تماس</a>
+        </div>
+      </nav>
+      
+      <div class="flex items-center gap-2">
+        <a id="callBtn" href="tel:09113286812" class="bg-accent text-white px-4 py-2 rounded-xl font-semibold hover:bg-green-700 transition">
+          <i class="fas fa-phone ml-1"></i> تماس فوری
+        </a>
+        <a id="waBtn" target="_blank" rel="noopener" href="https://wa.me/989113286812?text=سلام%2C%20برای%20استعلام%20قیمت%20اخالت" class="border border-primary text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary hover:text-white transition hidden sm:inline-flex">
+          <i class="fab fa-whatsapp ml-1"></i> واتساپ
+        </a>
+      </div>
+    </div>
+  </header>
 
-  <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
-
-  <script>
-    (() => {
-      "use strict";
-
-      /* تنظیمات فروشگاه */
-      const SHOP = {
-        name: "آهن آلات محسن محمدی",
-        address: "قائم‌شهر، میدان امام",
-        phone: "0911 328 6812",
-        lat: 36.4719,
-        lng: 52.8620,
-        photoUrl: "assets/images/storefront.jpg"
-      };
-
-      const TARGET_ZOOM = 17;
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      // بعد از مرور کافی زمان - انیمیشن حذف و نقشه نمایش داده شود
-      setTimeout(() => {
-        document.getElementById("cinema-overlay").classList.add("fade-out");
-        document.getElementById("hero-map-wrap").classList.add("show");
-
-        // رسم نقشه
-        const map = L.map("map", {
-          zoomControl: true,
-          attributionControl: true,
-          worldCopyJump: false,
-          preferCanvas: true,
-          fadeAnimation: false,
-          markerZoomAnimation: false
-        });
-
-        map.setView([SHOP.lat, SHOP.lng], TARGET_ZOOM);
-
-        // Tiles
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          maxZoom: 19,
-          minZoom: 2,
-          subdomains: "abc",
-          keepBuffer: 2,
-          updateWhenIdle: true,
-          updateWhenZooming: false,
-          attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        // مارکر و پاپ آپ
-        const gmapsLink = `https://www.google.com/maps?q=${SHOP.lat},${SHOP.lng}`;
-        const waLink = `https://wa.me/989113286812?text=سلام%2C%20برای%20استعلام%20قیمت%20آهن%20پیام%20دادم.`;
-
-        const popupHtml = `
-          <div class="shop-popup" dir="rtl">
-            <p class="name">${escapeHtml(SHOP.name)}</p>
-            <img loading="lazy" decoding="async" src="${escapeAttr(SHOP.photoUrl)}" alt="عكس فروشگاه">
-            <p class="addr">📄 ${escapeHtml(SHOP.address)}</p>
-            <p class="addr" style="margin-bottom: 6px;">&#128222; <span style="direction: ltr; unicode-bidi: embed;">${SHOP.phone}</span></p>
-            <div class="actions">
-              <a class="btn btn-primary" href="${escapeAttr(gmapsLink)}" target="_blank" rel="noopener">📄 Maps</a>
-              <a class="btn btn-secondary" href="${escapeAttr(waLink)}" target="_blank" rel="noopener">WhatsApp</a>
+  <!-- Hero Section -->
+  <section id="home" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <h1 class="text-3xl font-bold text-primary mb-4">فروش آهن‌آلات در قائمشهر با ارسال همان‌روز</h1>
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            میلگرد، تیرآهن، نبشی، ناودانی، پروفیل و ورق — قیمت به‌روز و موجودی واقعی. برش‌کاری دقیق و تحويل سريع داخل قائمشهر.
+          </p>
+          
+          <div class="flex flex-wrap gap-3 mb-6">
+            <a href="#prices" class="bg-primary text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-800 transition">
+              مشاهده قیمت امروز
+            </a>
+            <a id="heroWa" target="_blank" rel="noopener" href="https://wa.me/989113286812?text=سلام%2C%20برای%20استعلام%20قیمت%20اخالت" class="border border-primary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition">
+              <i class="fab fa-whatsapp ml-1"></i> استعلام سريع واتساپ
+            </a>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              ارسال همان‌روز داخل شهر
+            </div>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              برش‌کاری طبق نقشه
+            </div>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              پرداخت در محل
+            </div>
+            <div class="flex items-center">
+              <span class="w-2 h-2 rounded-full bg-accent mr-2"></span>
+              پشتيبانی تلفنی سريع
             </div>
           </div>
-        `;
+        </div>
+        
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop" alt="فروشگاه آهن آلات" class="rounded-xl shadow-lg w-full h-auto" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const marker = L.marker([SHOP.lat, SHOP.lng], { keyboard: false })
-          .addTo(map)
-          .bindPopup(popupHtml, { maxWidth: 260 });
+  <!-- Price Section -->
+  <section id="prices" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-primary mb-2">قیمت روز آهن در قائمشهر</h2>
+          <p class="text-gray-500">
+            به‌روزرسانی: <span id="jalaliDate" class="font-medium"></span>
+          </p>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full price-table">
+            <thead>
+              <tr>
+                <th class="px-6 py-3 text-right">قلم</th>
+                <th class="px-6 py-3 text-right">سايزهای رايج</th>
+                <th class="px-6 py-3 text-right">واحد</th>
+                <th class="px-6 py-3 text-right">قیمت حدودی</th>
+                <th class="px-6 py-3 text-right">اقدام</th>
+              </tr>
+            </thead>
+            <tbody id="priceBody" class="divide-y divide-gray-200"></tbody>
+          </table>
+        </div>
+      </div>
+      
+      <p class="text-gray-500 text-sm mt-3">
+        قیمت‌ها راهنمای اولیه‌اند؛ برای پيش‌فاکتور رسمی و موجودی لحظه‌ای با ما تماس بگيريد.
+      </p>
+    </div>
+  </section>
 
-        // از کار شروع کنيد - پاپ آپ از خود باز
-        marker.openPopup();
-      }, 3400);
+  <!-- Products Section -->
+  <section id="products" class="py-12 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">محصولات پرمصرف</h2>
+      
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
 
-      // توابع امنیتی
-      function escapeHtml(str) {
-        return String(str).replace(/[&<>"']/g, s => ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;"
-        }[s]));
-      }
-      function escapeAttr(str) {
-        return String(str).replace(/"/g, "&quot;");
-      }
-    })();
+  <!-- Services Section -->
+  <section id="services" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">خدمات</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover">
+          <div class="text-primary text-3xl mb-4">
+            <i class="fas fa-cut"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">برش‌کاری دقیق</h3>
+          <p class="text-gray-500">
+            برش طبق نقشه شما؛ ارسال فايل از طريق واتساپ.
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover">
+          <div class="text-primary text-3xl mb-4">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">ارسال همان‌روز</h3>
+          <p class="text-gray-500">
+            ثبت قبل از ساعت <span class="num">14:00</span> → تحويل همان‌روز داخل قائمشهر.
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover">
+          <div class="text-primary text-3xl mb-4">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">پرداخت در محل</h3>
+          <p class="text-gray-500">
+            تسويه هنگام تحويل، فاکتور رسمی عندالنياز.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-primary mb-8">تماس و مسیر‌یابی</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-store text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">نام فروشگاه:</p>
+                <p class="font-semibold">آهن آلات محسن محمدی</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">آدرس:</p>
+                <p class="font-semibold">قائمشهر، میدان امام</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-phone-alt text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">تلفن:</p>
+                <a href="tel:09113286812" class="num font-semibold hover:text-primary">0911 328 6812</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <i class="fas fa-clock text-primary mt-1 ml-2"></i>
+              <div>
+                <p class="text-sm text-gray-500">ساعت کاری:</p>
+                <p class="font-semibold">شنبه تا پنج‌شنبه 8 تا 18</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a target="_blank" rel="noopener" href="https://www.google.com/maps?q=36.4719,52.8620" class="border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50 transition">
+              <i class="fas fa-map ml-1"></i> Google Maps
+            </a>
+            <a target="_blank" rel="noopener" href="https://neshan.org/maps/search/%D9%82%D8%A7%D8%A6%D9%85%D8%B4%D9%87%D8%B1" class="border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50 transition">
+              <i class="fas fa-map-marked-alt ml-1"></i> نشان
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop" alt="نقشه موقعيت" class="w-full h-full object-cover" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          © <span id="year"></span> آهن آلات محسن محمدی – قائمشهر
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== تنظیمات ======
+    const PHONE_MOBILE = "09113286812";
+    const priceData = [
+      { product: "میلگرد A3", sizes: "12، 14، 16", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "تیرآهن", sizes: "14، 16، 18", unit: "کيلو/شاخه", price: "تماس بگيريد" },
+      { product: "نبشی", sizes: "30×30 تا 50×50", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "ناودانی", sizes: "8، 10", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "پروفيل قوطی", sizes: "20×20 تا 60×60", unit: "کيلو", price: "تماس بگيريد" },
+      { product: "ورق سياه", sizes: "ضخامت 2–10mm", unit: "کيلو", price: "تماس بگيريد" }
+    ];
+    const products = [
+      { name: "میلگرد A3", desc: "موجودی روزانه سايز 12/14/16", price: "تماس بگيريد", image: "https://images.unsplash.com/photo-1581092165854-40129078f813?w=600&h=400&fit=crop" },
+      { name: "تیرآهن", desc: "سايز 14/16/18؛ برندهای رايج", price: "تماس بگيريد", image: "https://images.unsplash.com/photo-1581092162392-8c6d1b7ad2f8?w=600&h=400&fit=crop" },
+      { name: "نبشی", desc: "بال 30 تا 50؛ سفارش برش", price: "تماس بگيريد", image: "https://images.unsplash.com/photo-1581092162392-8c6d1b7ad2f8?w=600&h=400&fit=crop" },
+      { name: "ناودانی", desc: "سايزهای پرمصرف ساختمانی", price: "تماس بگيريد", image: "https://images.unsplash.com/photo-1581092162392-8c6d1b7ad2f8?w=600&h=400&fit=crop" },
+      { name: "پروفيل قوطی", desc: "20×20 تا 60×60؛ صنعتی/سبک", price: "تماس بگيريد", image: "https://images.unsplash.com/photo-1581092916692-8d71e34b9a89?w=600&h=400&fit=crop" },
+      { name: "ورق سياه", desc: "ضخامت 2 تا 10 ميلی‌متر", price: "تماس بگيريد", image: "https://images.unsplash.com/photo-1581092160562-40fed08221c2?w=600&h=400&fit=crop" }
+    ];
+
+    function toJalaliToday(){
+      try{ return new Intl.DateTimeFormat('fa-IR-u-ca-persian', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date()); }
+      catch(e){ return new Intl.DateTimeFormat('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date()); }
+    }
+
+    function buildWhatsAppLink(text){
+      const intl = PHONE_MOBILE.replace(/^0/, '98');
+      const msg = encodeURIComponent(text || 'سلام، برای استعلام قیمت اخالتم.');
+      return `https://wa.me/${intl}?text=${msg}`;
+    }
+
+    function setJalaliToday(){
+      const el = document.getElementById('jalaliDate');
+      if(el) el.textContent = toJalaliToday();
+    }
+
+    function buildPriceTable(){
+      const tbody = document.getElementById('priceBody');
+      if(!tbody) return;
+      tbody.innerHTML = '';
+      priceData.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="px-4 py-3 font-medium">${row.product}</td>
+          <td class="px-4 py-3 text-gray-500">${row.sizes}</td>
+          <td class="px-4 py-3 text-gray-500">${row.unit}</td>
+          <td class="px-4 py-3 font-semibold">${row.price}</td>
+          <td class="px-4 py-3">
+            <a href="${buildWhatsAppLink(`سلام، برای ${row.product} (${row.sizes}) استعلام می‌گيرم.`)}" target="_blank" rel="noopener" class="border border-primary text-primary px-3 py-1 rounded-lg hover:bg-primary hover:text-white transition inline-flex items-center">
+              <i class="fab fa-whatsapp ml-1 text-sm"></i> استعلام
+            </a>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function buildProducts(){
+      const grid = document.getElementById('productGrid');
+      if(!grid) return;
+      grid.innerHTML = '';
+      products.forEach(p => {
+        const el = document.createElement('div');
+        el.className = 'bg-white rounded-xl shadow-lg p-6 transition duration-300 card-hover';
+        el.innerHTML = `
+          <div class="h-40 bg-gray-100 rounded-lg mb-4 overflow-hidden">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="text-lg font-semibold text-primary mb-2">${p.name}</h3>
+          <p class="text-gray-500 text-sm mb-2">${p.desc}</p>
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center text-sm">
+              <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+              موجود
+            </div>
+            <div class="text-primary font-semibold">${p.price}</div>
+          </div>
+          <a href="${buildWhatsAppLink(`سلام، درباره ${p.name} راهنمايی می‌خواهم.`)}" target="_blank" rel="noopener" class="w-full border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition inline-flex items-center justify-center">
+            <i class="fab fa-whatsapp ml-1"></i> مشاوره
+          </a>`;
+        grid.appendChild(el);
+      });
+    }
+
+    function setYear(){
+      const y = document.getElementById('year');
+      if(y) y.textContent = new Date().getFullYear();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setJalaliToday();
+      buildPriceTable();
+      buildProducts();
+      setYear();
+    });
   </script>
 </body>
 </html>
