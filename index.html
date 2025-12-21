@@ -3,509 +3,1031 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آهن آلات محسن محمدی - قائمشهر</title>
-    <meta name="description" content="میلگرد، تیرآهن، نبشی، ناودانی، پروفیل و ورق — قیمت بهروز و موجودی واقعی">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>آهن‌آلات محسن محمدی | خرید میلگرد، تیرآهن و ورق در قائم‌شهر، مازندران</title>
+    <meta name="description" content="مرکز تخصصی فروش میلگرد، تیرآهن، ورق و مقاطع فولادی در قائم‌شهر، لفور، بابل، ساری، شیرگاه و سراسر مازندران. تامین مستقیم از ذوب‌آهن اصفهان و تاراز با بهترین قیمت">
+    <meta name="keywords" content="آهن آلات قائم شهر, میلگرد قائم شهر, تیرآهن مازندران, ورق فولادی قائم شهر, آهن آلات لفور, میلگرد لفور, آهن آلات ساری, آهن آلات بابل, آهن آلات شیرگاه, ذوب آهن اصفهان, محسن محمدی, قیمت آهن آلات قائم شهر, فروش میلگرد مازندران">
+    <meta name="author" content="آهن‌آلات محسن محمدی">
+    <meta name="geo.region" content="IR-Mazandaran">
+    <meta name="geo.placename" content="قائم‌شهر">
+    <meta name="geo.position" content="36.463697;52.840977">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="آهن‌آلات محسن محمدی | قائم‌شهر، مازندران">
+    <meta property="og:description" content="تامین مستقیم انواع میلگرد، تیرآهن، ورق و مقاطع فولادی با بهترین قیمت در قائم‌شهر و مازندران">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="آهن‌آلات محسن محمدی">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hadiebrahimiseraji.github.io/ahanpromax.ir.github.io/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e40af' width='100' height='100'/><text fill='%23ffffff' font-family='Arial' font-size='60' font-weight='bold' x='50%25' y='50%25' text-anchor='middle' dy='.35em'>م</text></svg>">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "آهن‌آلات محسن محمدی",
+      "description": "تامین‌کننده تخصصی میلگرد، تیرآهن و مقاطع فولادی در قائم‌شهر و مازندران",
+      "image": "https://hadiebrahimiseraji.github.io/ahanpromax.ir.github.io/assets/images/storefront.jpg",
+      "telephone": "+989113286812",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "میدان امام",
+        "addressLocality": "قائم‌شهر",
+        "addressRegion": "مازندران",
+        "addressCountry": "IR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.463697",
+        "longitude": "52.840977"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "priceRange": "تماس بگیرید"
+    }
+    </script>
+    
     <style>
+        /* ========== CUSTOM PROPERTIES ========== */
+        :root {
+            --color-primary: #1e40af;
+            --color-primary-dark: #1e3a8a;
+            --color-secondary: #0f172a;
+            --color-accent: #f59e0b;
+            
+            --color-gray-50: #f8fafc;
+            --color-gray-100: #f1f5f9;
+            --color-gray-200: #e2e8f0;
+            --color-gray-600: #475569;
+            --color-gray-700: #334155;
+            --color-gray-800: #1e293b;
+            --color-gray-900: #0f172a;
+            
+            --color-success: #10b981;
+            --font-primary: 'Vazirmatn', sans-serif;
+            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+        
+        /* ========== BASE STYLES ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --primary: #dc2626;
-            --primary-dark: #991b1b;
-            --primary-light: #fecaca;
-            --secondary: #0f172a;
-            --secondary-light: #1e293b;
-            --accent: #f59e0b;
-            --text-light: #1f2937;
-            --text-dark: #f3f4f6;
-            --bg-light: #ffffff;
-            --bg-dark: #111827;
-            --border-light: #e5e7eb;
-            --border-dark: #374151;
-        }
-
+        
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 100px;
         }
-
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-gray-800);
+            background-color: var(--color-gray-50);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
-        /* Light Mode */
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-light);
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--color-gray-900);
         }
-
-        /* Dark Mode */
-        body.dark {
-            background-color: var(--bg-dark);
-            color: var(--text-dark);
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.875rem); }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
         }
-
-        /* Smooth Transitions */
-        body, body * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-gray-200);
+            box-shadow: var(--shadow-sm);
         }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .navbar.scrolled {
+            box-shadow: var(--shadow-lg);
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .nav-link {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-gray-700);
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: var(--transition-base);
         }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        
+        .nav-link:hover {
+            color: var(--color-primary);
+            background-color: var(--color-gray-100);
         }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-
-        .animate-fade-in-down {
-            animation: fadeInDown 0.6s ease-out;
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .animate-slide-in-right {
-            animation: slideInRight 0.6s ease-out;
-        }
-
-        .animate-scale-in {
-            animation: scaleIn 0.5s ease-out;
-        }
-
-        .animate-pulse-slow {
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        /* Hover Effects */
+        
+        /* ========== BUTTONS ========== */
         .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: var(--radius-lg);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* ========== HERO SECTION ========== */
+        .hero-section {
             position: relative;
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             overflow: hidden;
         }
-
-        .btn::before {
+        
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            right: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s ease;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+            opacity: 0.8;
         }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        /* Responsive Grid */
-        .grid-auto {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .grid-auto {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Shadow Effects */
-        .shadow-glow {
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
-        }
-
-        body.dark .shadow-glow {
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
-        }
-
-        /* Table Styles */
-        table {
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
             width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
         }
-
-        th {
-            background: var(--primary);
-            color: white;
-            padding: 12px;
+        
+        /* ========== CARDS ========== */
+        .card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-gray-200);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: #3b82f6;
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        /* ========== PRODUCT TABLE ========== */
+        .product-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .product-table thead {
+            background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-gray-900) 100%);
+        }
+        
+        .product-table thead th {
+            padding: 20px 24px;
             text-align: right;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .product-table tbody tr {
+            border-bottom: 1px solid var(--color-gray-100);
+            transition: var(--transition-base);
+        }
+        
+        .product-table tbody tr:hover {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 100%);
+        }
+        
+        .product-table tbody td {
+            padding: 20px 24px;
+            color: var(--color-gray-700);
+            font-size: 15px;
+        }
+        
+        .product-table tbody td:first-child {
+            font-weight: 700;
+            color: var(--color-gray-900);
+        }
+        
+        /* ========== BADGES ========== */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 12px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-
-        td {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--border-light);
+        
+        .badge-success {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
-
-        body.dark td {
-            border-bottom-color: var(--border-dark);
+        
+        .badge-info {
+            background: rgba(59, 130, 246, 0.1);
+            color: #2563eb;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
-
-        tr:hover {
-            background: var(--primary-light);
+        
+        .badge-premium {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            border: none;
         }
-
-        body.dark tr:hover {
-            background: var(--secondary-light);
+        
+        /* ========== DARK MODE ========== */
+        .dark {
+            --color-gray-50: #0f172a;
+            --color-gray-100: #1e293b;
+            --color-gray-200: #334155;
+            --color-gray-700: #cbd5e1;
+            --color-gray-800: #e2e8f0;
+            --color-gray-900: #f8fafc;
         }
-
-        /* Loading Skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, var(--border-light) 25%, rgba(200, 200, 200, 0.2) 50%, var(--border-light) 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+        
+        .dark body {
+            background: var(--color-secondary);
+            color: var(--color-gray-700);
         }
-
-        body.dark .skeleton {
-            background: linear-gradient(90deg, var(--border-dark) 25%, rgba(100, 100, 100, 0.2) 50%, var(--border-dark) 75%);
+        
+        .dark .navbar {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
         }
-
-        @keyframes loading {
-            0% {
-                background-position: 200% 0;
+        
+        .dark .card {
+            background: var(--color-gray-100);
+            border-color: var(--color-gray-200);
+        }
+        
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--color-gray-100);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            border-radius: 9999px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-dark);
+        }
+        
+        /* ========== UTILITY CLASSES ========== */
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            border-radius: 9999px;
+            margin: 24px auto;
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 60vh;
+                padding-top: 40px;
             }
-            100% {
-                background-position: -200% 0;
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+            
+            .card {
+                padding: 24px;
             }
         }
     </style>
 </head>
-<body class="" x-data="{darkMode: localStorage.getItem('darkMode') === 'true'}" x-init="$watch('darkMode', val => {localStorage.setItem('darkMode', val); document.documentElement.classList.toggle('dark', val)})" :class="darkMode && 'dark'">
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-700 shadow-sm animate-fade-in-down">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center shadow-glow">
-                    <span class="text-white font-bold text-lg">🏭</span>
-                </div>
-                <div>
-                    <h1 class="font-bold text-xl text-gray-900 dark:text-white">محسن محمدی</h1>
-                    <p class="text-xs text-gray-600 dark:text-gray-400">آهن‌آلات</p>
-                </div>
-            </div>
+<body x-data="{ 
+    darkMode: localStorage.getItem('darkMode') === 'true', 
+    mobileMenu: false,
+    scrolled: false
+}" 
+    x-init="
+        $watch('darkMode', val => { 
+            localStorage.setItem('darkMode', val); 
+            document.documentElement.classList.toggle('dark', val) 
+        });
+        window.addEventListener('scroll', () => {
+            scrolled = window.scrollY > 50;
+        });
+    "
+    :class="darkMode && 'dark'">
 
-            <nav class="hidden md:flex gap-6 items-center">
-                <a href="#products" class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition font-medium">محصولات</a>
-                <a href="#prices" class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition font-medium">قیمت‌ها</a>
-                <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition font-medium">تماس</a>
-                <button @click="darkMode = !darkMode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" title="تغییر تم">
-                    <span x-show="!darkMode" class="text-xl">🌙</span>
-                    <span x-show="darkMode" class="text-xl">☀️</span>
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav class="navbar" :class="scrolled && 'scrolled'">
+        <div class="container-custom">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-amber-500 rounded-xl blur opacity-25 group-hover:opacity-50 transition"></div>
+                        <div class="relative w-14 h-14 bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center shadow-xl">
+                            <span class="text-white text-2xl font-black">م</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tight text-gray-900 dark:text-white leading-none">
+                            آهن‌آلات محسن محمدی
+                        </h1>
+                        <p class="text-xs font-semibold text-blue-600 dark:text-blue-400 leading-none mt-1">
+                            قائم‌شهر، مازندران
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <a href="#home" class="nav-link">صفحه اصلی</a>
+                        <a href="#products" class="nav-link">محصولات</a>
+                        <a href="#contact" class="nav-link">تماس با ما</a>
+                    </div>
+                    
+                    <div class="h-8 w-px bg-gray-300 dark:bg-gray-700"></div>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button @click="darkMode = !darkMode" 
+                            class="p-2.5 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <span x-show="!darkMode">🌙</span>
+                        <span x-show="darkMode">☀️</span>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <a href="tel:+989113286812" class="btn btn-primary">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        تماس فوری
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenu = !mobileMenu" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
-            </nav>
-
-            <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" @click="open = !open">
-                <span class="text-2xl">☰</span>
-            </button>
+            </div>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-red-600 to-red-800 text-white py-20 overflow-hidden">
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenu" 
+             x-transition
+             class="lg:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="container-custom py-4 space-y-2">
+                <a href="#home" class="block nav-link">صفحه اصلی</a>
+                <a href="#products" class="block nav-link">محصولات</a>
+                <a href="#contact" class="block nav-link">تماس با ما</a>
+                <div class="pt-4 space-y-2">
+                    <a href="tel:+989113286812" class="btn btn-primary w-full justify-center">
+                        تماس فوری
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero-section">
+        <div class="hero-pattern"></div>
+        <div class="container-custom relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center py-16">
+                <!-- Content Column -->
+                <div class="text-right">
+                    <!-- Main Heading -->
+                    <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight mb-6">
+                        تامین تخصصی
+                        <br>
+                        <span class="gradient-text bg-gradient-to-l from-blue-400 via-blue-300 to-amber-400 bg-clip-text text-transparent">
+                            آهن‌آلات ساختمانی
+                        </span>
+                        <br>
+                        در قائم‌شهر و مازندران
+                    </h2>
+                    
+                    <!-- Description -->
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                        آهن‌آلات محسن محمدی در قائم‌شهر؛ ارائه‌دهنده مستقیم محصولات ذوب‌آهن اصفهان، شرکت تاراز و تولیدکنندگان تراز اول کشور. ما کیفیت و اصالت کالا را در تمام پروژه‌های ساختمانی شمال تضمین می‌کنیم.
+                    </p>
+                    
+                    <!-- Service Areas -->
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-semibold">قائم‌شهر</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-semibold">لفور</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-semibold">بابل</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-semibold">ساری</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-semibold">شیرگاه</span>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#products" class="btn bg-white text-gray-900 hover:bg-gray-100 shadow-2xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            مشاهده محصولات
+                        </a>
+                        <a href="https://wa.me/989113286812" class="btn btn-whatsapp">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            واتس‌اپ
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image Column -->
+                <div class="hidden lg:block">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-amber-500 rounded-3xl blur-2xl opacity-20"></div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
+                            <img src="assets/images/storefront.jpg" 
+                                 alt="فروشگاه آهن‌آلات محسن محمدی در قائم‌شهر" 
+                                 class="w-full h-[500px] object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&h=600&fit=crop'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCTS SECTION ========== -->
+    <section id="products" class="section-padding bg-white dark:bg-gray-950">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="badge badge-info mb-4">محصولات</span>
+                <h3 class="text-4xl font-black mb-6">کاتالوگ کامل محصولات</h3>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    برای استعلام قیمت روز محصولات با ما تماس بگیرید
+                </p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <!-- ========== 1. میلگرد بتنی ========== -->
+            <div class="mb-20">
+                <div class="flex flex-wrap items-center gap-4 mb-8">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-lg">
+                        01
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black">میلگرد بتنی</h4>
+                        <p class="text-gray-500 dark:text-gray-400 mt-1">فولاد داغ‌نورد برای سازه‌های بتنی</p>
+                    </div>
+                    <span class="mr-auto badge badge-premium">ذوب‌آهن اصفهان</span>
+                </div>
+                
+                <div class="card !p-0 overflow-hidden">
+                    <div class="grid lg:grid-cols-3">
+                        <!-- Image & Specs -->
+                        <div class="lg:border-l border-gray-200 dark:border-gray-800 p-8">
+                            <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
+                                <img src="assets/images/products/milgerd.jpg" 
+                                     alt="میلگرد بتنی قائم شهر" 
+                                     class="w-full h-56 object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=300&fit=crop'">
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">استاندارد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">ملی ایران ۳۱۳۲</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">نوع فولاد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">داغ‌نورد A3</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">کاربرد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">تقویت بتن</span>
+                                </div>
+                                <div class="flex justify-between py-2">
+                                    <span class="font-bold">طول:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">۱۲ متر</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Table -->
+                        <div class="lg:col-span-2 overflow-x-auto">
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>قطر</th>
+                                        <th>وزن هر شاخه</th>
+                                        <th>وضعیت موجودی</th>
+                                        <th>استعلام قیمت</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-black text-lg">میلگرد ۱۰</td>
+                                        <td>۷.۴ کیلوگرم</td>
+                                        <td><span class="badge badge-success">موجود</span></td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">تماس بگیرید</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg">میلگرد ۱۲</td>
+                                        <td>۱۰.۷ کیلوگرم</td>
+                                        <td><span class="badge badge-success">موجود</span></td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">تماس بگیرید</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg">میلگرد ۱۴</td>
+                                        <td>۱۴.۶ کیلوگرم</td>
+                                        <td><span class="badge badge-success">موجود</span></td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">تماس بگیرید</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg">میلگرد ۱۶</td>
+                                        <td>۱۹.۰ کیلوگرم</td>
+                                        <td><span class="badge badge-success">موجود</span></td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">تماس بگیرید</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg">میلگرد ۱۸</td>
+                                        <td>۲۴.۱ کیلوگرم</td>
+                                        <td><span class="badge badge-success">موجود</span></td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">تماس بگیرید</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg">میلگرد ۲۰</td>
+                                        <td>۲۹.۷ کیلوگرم</td>
+                                        <td><span class="badge badge-success">موجود</span></td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">تماس بگیرید</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========== 2. تیرآهن ========== -->
+            <div class="mb-20">
+                <div class="flex flex-wrap items-center gap-4 mb-8">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-lg">
+                        02
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black">تیرآهن</h4>
+                        <p class="text-gray-500 dark:text-gray-400 mt-1">تیرهای آی شکل برای سازه‌های فلزی</p>
+                    </div>
+                    <span class="mr-auto badge badge-premium">ذوب‌آهن اصفهان</span>
+                </div>
+                
+                <div class="card !p-0 overflow-hidden">
+                    <div class="grid lg:grid-cols-3">
+                        <div class="lg:border-l border-gray-200 dark:border-gray-800 p-8">
+                            <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
+                                <img src="assets/images/products/tirahan.jpg" 
+                                     alt="تیرآهن قائم شهر" 
+                                     class="w-full h-56 object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=400&h=300&fit=crop'">
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">استاندارد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">DIN 1025</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">نوع:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">I-Beam گرم‌نورد</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">کاربرد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">اسکلت فلزی</span>
+                                </div>
+                                <div class="flex justify-between py-2">
+                                    <span class="font-bold">طول:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">۱۲ متر</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-2 overflow-x-auto">
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>شماره تیر</th>
+                                        <th>وزن متری</th>
+                                        <th>ارتفاع</th>
+                                        <th>استعلام</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-black text-lg text-blue-600">تیرآهن ۱۲</td>
+                                        <td>۱۰.۴ کیلوگرم</td>
+                                        <td>۱۲۰ میلی‌متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">استعلام روز</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg text-blue-600">تیرآهن ۱۴</td>
+                                        <td>۱۲.۹ کیلوگرم</td>
+                                        <td>۱۴۰ میلی‌متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">استعلام روز</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg text-blue-600">تیرآهن ۱۶</td>
+                                        <td>۱۵.۸ کیلوگرم</td>
+                                        <td>۱۶۰ میلی‌متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">استعلام روز</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg text-blue-600">تیرآهن ۱۸</td>
+                                        <td>۱۸.۸ کیلوگرم</td>
+                                        <td>۱۸۰ میلی‌متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">استعلام روز</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-black text-lg text-blue-600">تیرآهن ۲۰</td>
+                                        <td>۲۲.۴ کیلوگرم</td>
+                                        <td>۲۰۰ میلی‌متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg">استعلام روز</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========== 3. ورق فولادی ========== -->
+            <div class="mb-20">
+                <div class="flex flex-wrap items-center gap-4 mb-8">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-800 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-lg">
+                        03
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black">ورق فولادی</h4>
+                        <p class="text-gray-500 dark:text-gray-400 mt-1">ورق سیاه و رقیق</p>
+                    </div>
+                    <span class="mr-auto badge badge-info">ذوب‌آهن / تاراز</span>
+                </div>
+                
+                <div class="card !p-0 overflow-hidden">
+                    <div class="grid lg:grid-cols-3">
+                        <div class="lg:border-l border-gray-200 dark:border-gray-800 p-8">
+                            <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
+                                <img src="assets/images/products/varagh.jpg" 
+                                     alt="ورق فولادی قائم شهر" 
+                                     class="w-full h-56 object-cover"
+                                     onerror="this.src='https://images.unsplash.com/photo-1609480282330-56ee00d8be46?w=400&h=300&fit=crop'">
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">نوع:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">سیاه / رقیق</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+                                    <span class="font-bold">ابعاد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">۱.۲۵ و ۱.۵ متر</span>
+                                </div>
+                                <div class="flex justify-between py-2">
+                                    <span class="font-bold">کاربرد:</span>
+                                    <span class="text-gray-600 dark:text-gray-400">صنایع سنگین</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-2 overflow-x-auto">
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>نوع ورق</th>
+                                        <th>ضخامت</th>
+                                        <th>عرض</th>
+                                        <th>استعلام</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-bold">ورق سیاه</td>
+                                        <td>۵ میلی‌متر</td>
+                                        <td>۱.۵ متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-outline inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border-2">استعلام</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">ورق سیاه</td>
+                                        <td>۶ میلی‌متر</td>
+                                        <td>۱.۵ متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-outline inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border-2">استعلام</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">ورق سیاه</td>
+                                        <td>۸ میلی‌متر</td>
+                                        <td>۱.۵ متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-outline inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border-2">استعلام</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">ورق رقیق تاراز</td>
+                                        <td>۰.۵ میلی‌متر</td>
+                                        <td>۱.۲۵ متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-outline inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border-2">استعلام</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">ورق رقیق تاراز</td>
+                                        <td>۰.۶ میلی‌متر</td>
+                                        <td>۱.۲۵ متر</td>
+                                        <td><a href="tel:+989113286812" class="btn-outline inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border-2">استعلام</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========== 4 & 5 & 6. نبشی، ناودانی، قوطی ========== -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- نبشی -->
+                <div class="card">
+                    <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
+                        <img src="assets/images/products/nabshi.jpg" 
+                             alt="نبشی قائم شهر" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1565792447059-f8c1bb3d4f6e?w=400&h=300&fit=crop'">
+                    </div>
+                    <h5 class="text-2xl font-black mb-4">نبشی</h5>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">سایزهای ۳×۳ تا ۶×۶</p>
+                    <a href="tel:+989113286812" class="btn-primary w-full justify-center">استعلام قیمت</a>
+                </div>
+                
+                <!-- ناودانی -->
+                <div class="card">
+                    <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
+                        <img src="assets/images/products/navdani.jpg" 
+                             alt="ناودانی قائم شهر" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=400&h=300&fit=crop'">
+                    </div>
+                    <h5 class="text-2xl font-black mb-4">ناودانی</h5>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">شماره ۸ تا ۱۴</p>
+                    <a href="tel:+989113286812" class="btn-primary w-full justify-center">استعلام قیمت</a>
+                </div>
+                
+                <!-- قوطی -->
+                <div class="card">
+                    <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
+                        <img src="assets/images/products/ghoti.jpg" 
+                             alt="قوطی فولادی قائم شهر" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1565792447059-f8c1bb3d4f6e?w=400&h=300&fit=crop'">
+                    </div>
+                    <h5 class="text-2xl font-black mb-4">قوطی و پروفیل</h5>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">سایزهای ۲۰×۲۰ تا ۶۰×۶۰</p>
+                    <a href="tel:+989113286812" class="btn-primary w-full justify-center">استعلام قیمت</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 right-20 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 left-20 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 50px 50px;"></div>
         </div>
-
-        <div class="max-w-6xl mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="animate-fade-in-down">
-                    <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">میلگرد، تیرآهن، نبشی</h2>
-                    <p class="text-xl text-red-100 mb-8">قیمت بهروز • موجودی واقعی • تحویل سریع</p>
-                    <div class="flex gap-4 flex-wrap">
-                        <a href="tel:+989113286812" class="btn bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg">
-                            📞 تماس فوری
+        
+        <div class="container-custom relative z-10">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black mb-6">تماس با مدیریت</h3>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    جهت مشاوره رایگان و استعلام قیمت روز آهن‌آلات در قائم‌شهر و مازندران با ما در ارتباط باشید
+                </p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Address -->
+                    <div class="flex gap-4">
+                        <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-bold mb-2">📍 آدرس دفتر و انبار</h5>
+                            <p class="text-gray-300">مازندران، قائم‌شهر، میدان امام</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="flex gap-4">
+                        <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-bold mb-2">📞 شماره‌های تماس</h5>
+                            <p class="text-gray-300 text-xl font-bold">۰۹۱۱ ۳۲۸ ۶۸۱۲</p>
+                            <p class="text-gray-300 text-xl font-bold">۰۹۱۱ ۳۲۸ ۶۸۱۳</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Working Hours -->
+                    <div class="flex gap-4">
+                        <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-bold mb-2">⏰ ساعات پاسخگویی</h5>
+                            <p class="text-gray-300">شنبه تا پنجشنبه<br>۸ صبح الی ۱۸ عصر</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Box -->
+                <div class="bg-white text-gray-900 p-10 rounded-3xl shadow-2xl">
+                    <h4 class="text-3xl font-black mb-8 text-center">استعلام سریع قیمت</h4>
+                    <div class="space-y-4">
+                        <a href="tel:+989113286812" class="btn btn-primary w-full justify-center text-lg py-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            📞 تماس مستقیم
                         </a>
-                        <a href="https://wa.me/989113286812" target="_blank" class="btn border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-red-600 transition">
-                            💬 WhatsApp
+                        <a href="https://wa.me/989113286812" class="btn btn-whatsapp w-full justify-center text-lg py-4">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            💬 پیام در واتس‌اپ
                         </a>
                     </div>
                 </div>
-
-                <div class="animate-fade-in-up">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=400&fit=crop" alt="آهن‌آلات" class="rounded-xl shadow-2xl object-cover w-full h-96">
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-16 bg-gray-50 dark:bg-slate-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">چرا ما را انتخاب کنید؟</h3>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-slate-700 p-8 rounded-xl shadow hover:shadow-lg transition animate-scale-in" style="animation-delay: 0s">
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">تحویل سریع</h4>
-                    <p class="text-gray-600 dark:text-gray-400">ثبت قبل از ساعت 14:00 → تحویل همانروز</p>
-                </div>
-
-                <div class="bg-white dark:bg-slate-700 p-8 rounded-xl shadow hover:shadow-lg transition animate-scale-in" style="animation-delay: 0.1s">
-                    <div class="text-4xl mb-4">💰</div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">قیمت منصفانه</h4>
-                    <p class="text-gray-600 dark:text-gray-400">قیمت‌های رقابتی و قابل‌مذاکره</p>
-                </div>
-
-                <div class="bg-white dark:bg-slate-700 p-8 rounded-xl shadow hover:shadow-lg transition animate-scale-in" style="animation-delay: 0.2s">
-                    <div class="text-4xl mb-4">✂️</div>
-                    <h4 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">برش دقیق</h4>
-                    <p class="text-gray-600 dark:text-gray-400">برش طبق نقشه شما با دقت بالا</p>
-                </div>
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div class="container-custom">
+            <div class="text-center">
+                <p class="text-gray-400 text-sm mb-4">
+                    © ۲۰۲۵ آهن‌آلات محسن محمدی. تمامی حقوق محفوظ است.
+                </p>
+                <p class="text-gray-500 text-xs">
+                    تامین‌کننده برتر آهن‌آلات در قائم‌شهر، مازندران و شمال کشور
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">محصولات ما</h3>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-slate-700 rounded-xl overflow-hidden shadow hover:shadow-xl transition animate-fade-in-up" style="animation-delay: 0s">
-                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=200&fit=crop" alt="میلگرد" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">میلگرد</h4>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">میلگرد با انواع قطرهای مختلف</p>
-                        <p class="text-red-600 font-bold text-lg">قیمت: تماس بگیرید</p>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-slate-700 rounded-xl overflow-hidden shadow hover:shadow-xl transition animate-fade-in-up" style="animation-delay: 0.1s">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="تیرآهن" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">تیرآهن</h4>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">تیرآهن IPE و HEA درجه‌های مختلف</p>
-                        <p class="text-red-600 font-bold text-lg">قیمت: تماس بگیرید</p>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-slate-700 rounded-xl overflow-hidden shadow hover:shadow-xl transition animate-fade-in-up" style="animation-delay: 0.2s">
-                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=200&fit=crop" alt="نبشی" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">نبشی</h4>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">نبشی زاویه‌ای و دیگر پروفیل‌ها</p>
-                        <p class="text-red-600 font-bold text-lg">قیمت: تماس بگیرید</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Price Table Section -->
-    <section id="prices" class="py-16 bg-gray-50 dark:bg-slate-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">جدول قیمت‌ها</h3>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-8">❗ قیمت‌ها راهنمای اولیهاند. برای قیمت روز تماس بگیرید.</p>
-            
-            <div class="overflow-x-auto animate-fade-in-up">
-                <table class="min-w-full bg-white dark:bg-slate-700 rounded-lg overflow-hidden shadow">
-                    <thead>
-                        <tr>
-                            <th>قلم</th>
-                            <th>سایزهای رایج</th>
-                            <th>واحد</th>
-                            <th>قیمت تقریبی (ریال)</th>
-                            <th>اقدام</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="font-bold">میلگرد</td>
-                            <td>8 تا 32</td>
-                            <td>تن</td>
-                            <td>3,200,000</td>
-                            <td><a href="https://wa.me/989113286812?text=درخواست قیمت میلگرد" class="text-red-600 font-bold hover:underline">پیام</a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-bold">تیرآهن IPE</td>
-                            <td>80 تا 550</td>
-                            <td>تن</td>
-                            <td>3,100,000</td>
-                            <td><a href="https://wa.me/989113286812?text=درخواست قیمت تیرآهن" class="text-red-600 font-bold hover:underline">پیام</a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-bold">نبشی</td>
-                            <td>20x20 تا 100x100</td>
-                            <td>تن</td>
-                            <td>3,050,000</td>
-                            <td><a href="https://wa.me/989113286812?text=درخواست قیمت نبشی" class="text-red-600 font-bold hover:underline">پیام</a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-bold">ورق</td>
-                            <td>1.5 تا 25mm</td>
-                            <td>تن</td>
-                            <td>3,400,000</td>
-                            <td><a href="https://wa.me/989113286812?text=درخواست قیمت ورق" class="text-red-600 font-bold hover:underline">پیام</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">خدمات ما</h3>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="flex gap-4 animate-slide-in-right" style="animation-delay: 0s">
-                    <div class="text-3xl flex-shrink-0">📐</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">برش طبق نقشه</h4>
-                        <p class="text-gray-600 dark:text-gray-400">برش دقیق مطابق نقشه شما. فایل را از طریق WhatsApp ارسال کنید.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 animate-slide-in-right" style="animation-delay: 0.1s">
-                    <div class="text-3xl flex-shrink-0">🚚</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">تحویل سریع</h4>
-                        <p class="text-gray-600 dark:text-gray-400">تحویل همانروز در داخل قائمشهر برای سفارش‌های ثبت‌شده قبل از 14:00</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 animate-slide-in-right" style="animation-delay: 0.2s">
-                    <div class="text-3xl flex-shrink-0">📄</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">فاکتور رسمی</h4>
-                        <p class="text-gray-600 dark:text-gray-400">صدور فاکتور رسمی برای همه سفارش‌ها</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 animate-slide-in-right" style="animation-delay: 0.3s">
-                    <div class="text-3xl flex-shrink-0">💳</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">پرداخت انعطاف‌پذیر</h4>
-                        <p class="text-gray-600 dark:text-gray-400">تسویه هنگام تحویل یا پرداخت پیش‌تر</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-12">اطلاعات تماس</h3>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-6 animate-fade-in-up">
-                    <div class="flex gap-4">
-                        <span class="text-3xl">🏢</span>
-                        <div>
-                            <h4 class="font-bold mb-1">نام فروشگاه</h4>
-                            <p class="text-gray-300">آهن آلات محسن محمدی</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <span class="text-3xl">📍</span>
-                        <div>
-                            <h4 class="font-bold mb-1">آدرس</h4>
-                            <p class="text-gray-300">قائمشهر، میدان امام</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <span class="text-3xl">📞</span>
-                        <div>
-                            <h4 class="font-bold mb-1">تلفن</h4>
-                            <a href="tel:+989113286812" class="text-blue-400 hover:underline">0911 328 6812</a>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <span class="text-3xl">⏰</span>
-                        <div>
-                            <h4 class="font-bold mb-1">ساعت کاری</h4>
-                            <p class="text-gray-300">شنبه تا پنجشنبه<br/>8 صبح تا 6 شب</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="animate-fade-in-down flex flex-col justify-center">
-                    <div class="bg-white text-gray-900 p-8 rounded-lg shadow-lg">
-                        <h4 class="text-2xl font-bold mb-6">تماس سریع</h4>
-                        <div class="flex flex-col gap-4">
-                            <a href="tel:+989113286812" class="btn bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition text-center">
-                                📞 تماس تلفنی
-                            </a>
-                            <a href="https://wa.me/989113286812" target="_blank" class="btn bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-600 transition text-center">
-                                💬 پیام WhatsApp
-                            </a>
-                            <a href="mailto:info@steelshop.ir" class="btn bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition text-center">
-                                ✉️ ایمیل
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="mb-2">© 2025 آهن آلات محسن محمدی</p>
-            <p class="text-sm">طراحی و توسعه توسط <a href="https://github.com/Hadiebrahimiseraji" class="text-red-500 hover:underline">Hadi Ebrahimi</a></p>
         </div>
     </footer>
 
