@@ -216,7 +216,7 @@
         /* ========== HERO SECTION ========== */
         .hero-section {
             position: relative;
-            min-height: 65vh;
+            min-height: 55vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
@@ -360,6 +360,12 @@
             border: none;
         }
         
+        /* شماره تلفن - جهت چپ به راست */
+        .phone-number {
+            direction: ltr;
+            display: inline-block;
+        }
+        
         /* ========== DARK MODE ========== */
         .dark {
             --color-gray-50: #0f172a;
@@ -432,8 +438,8 @@
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             .hero-section {
-                min-height: 60vh;
-                padding-top: 40px;
+                min-height: 50vh;
+                padding-top: 30px;
             }
             
             .btn {
@@ -542,11 +548,11 @@
     <section id="home" class="hero-section">
         <div class="hero-pattern"></div>
         <div class="container-custom relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center py-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
                 <!-- Content Column -->
                 <div class="text-right">
                     <!-- Main Heading -->
-                    <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight mb-6">
+                    <h2 class="text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
                         تامین تخصصی
                         <br>
                         <span class="gradient-text bg-gradient-to-l from-blue-400 via-blue-300 to-amber-400 bg-clip-text text-transparent">
@@ -594,8 +600,8 @@
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
                             <img src="assets/images/storefront.jpg" 
                                  alt="فروشگاه آهن‌آلات محسن محمدی در قائم‌شهر" 
-                                 class="w-full h-[500px] object-cover"
-                                 onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&h=600&fit=crop'">
+                                 class="w-full h-[420px] object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&h=500&fit=crop'">
                             <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent"></div>
                         </div>
                     </div>
@@ -635,7 +641,7 @@
                         <!-- Image & Specs -->
                         <div class="lg:border-l border-gray-200 dark:border-gray-800 p-8">
                             <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
-                                <img src="assets/images/products/milgerd.jpg" 
+                                <img src="assets/images/products/milgerd.JPG" 
                                      alt="میلگرد بتنی قائم شهر" 
                                      class="w-full h-56 object-cover"
                                      onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=300&fit=crop'">
@@ -896,7 +902,7 @@
                 <!-- نبشی -->
                 <div class="card">
                     <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
-                        <img src="assets/images/products/nabshi.jpg" 
+                        <img src="assets/images/products/nabshi.JPG" 
                              alt="نبشی قائم شهر" 
                              class="w-full h-48 object-cover"
                              onerror="this.src='https://images.unsplash.com/photo-1565792447059-f8c1bb3d4f6e?w=400&h=300&fit=crop'">
@@ -922,7 +928,7 @@
                 <!-- قوطی -->
                 <div class="card">
                     <div class="rounded-2xl overflow-hidden mb-6 shadow-md">
-                        <img src="assets/images/products/ghoti.jpg" 
+                        <img src="assets/images/products/ghoti.JPG" 
                              alt="قوطی فولادی قائم شهر" 
                              class="w-full h-48 object-cover"
                              onerror="this.src='https://images.unsplash.com/photo-1565792447059-f8c1bb3d4f6e?w=400&h=300&fit=crop'">
@@ -936,7 +942,7 @@
     </section>
 
     <!-- ========== CONTACT SECTION ========== -->
-    <section id="contact" class="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+    <section id="contact" class="section-padding bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 50px 50px;"></div>
         </div>
@@ -944,7 +950,7 @@
         <div class="container-custom relative z-10">
             <div class="text-center mb-16">
                 <h3 class="text-4xl font-black mb-6">تماس با مدیریت</h3>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
                     جهت مشاوره رایگان و استعلام قیمت روز آهن‌آلات در قائم‌شهر و مازندران با ما در ارتباط باشید
                 </p>
                 <div class="section-divider"></div>
@@ -956,41 +962,41 @@
                     <!-- Address -->
                     <div class="flex gap-4">
                         <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
                         </div>
                         <div>
                             <h5 class="text-lg font-bold mb-2">📍 آدرس دفتر و انبار</h5>
-                            <p class="text-gray-300">مازندران، قائم‌شهر، میدان امام</p>
+                            <p class="text-gray-200">مازندران، قائم‌شهر، میدان امام</p>
                         </div>
                     </div>
                     
                     <!-- Phone -->
                     <div class="flex gap-4">
                         <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-7 h-7 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                             </svg>
                         </div>
                         <div>
                             <h5 class="text-lg font-bold mb-2">📞 شماره‌های تماس</h5>
-                            <p class="text-gray-300 text-xl font-bold">۰۹۱۱ ۳۲۸ ۶۸۱۲</p>
-                            <p class="text-gray-300 text-xl font-bold">۰۹۱۱ ۳۲۸ ۶۸۱۳</p>
+                            <p class="text-white text-xl font-bold phone-number">0911 328 6812</p>
+                            <p class="text-white text-xl font-bold phone-number">0911 328 6813</p>
                         </div>
                     </div>
                     
                     <!-- Working Hours -->
                     <div class="flex gap-4">
                         <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-7 h-7 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
                         <div>
                             <h5 class="text-lg font-bold mb-2">⏰ ساعات پاسخگویی</h5>
-                            <p class="text-gray-300">شنبه تا پنجشنبه<br>۸ صبح الی ۱۸ عصر</p>
+                            <p class="text-gray-200">شنبه تا پنجشنبه<br>۸ صبح الی ۱۸ عصر</p>
                         </div>
                     </div>
                 </div>
